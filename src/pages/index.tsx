@@ -1,7 +1,6 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 
-
 import styles from './index.module.css';
 
 function HomepageHeader() {
@@ -63,7 +62,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`Bienvenido a ${siteConfig.title}`}
-      description="Introducción a la Programación">     
+      description="Introducción a la Programación">
       <main>
         <HomepageHeader />
       </main>
