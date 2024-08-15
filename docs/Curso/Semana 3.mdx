@@ -1,5 +1,362 @@
 ---
-sidebar_position: 1
-draft: true
+sidebar_position: 3
+draft: false
 slug: /semana3
 ---
+# Semana 3
+
+## Etiquetas Multimedia HTML5
+
+Aquí tienes una explicación detallada de las etiquetas multimedia de HTML5 que mencionaste:
+
+### **`<video>`:**
+
+* **Función:** Define un reproductor de video.
+* **Atributos principales:**
+    * `src`: Ruta al archivo de video.
+    * `controls`: Muestra los controles de reproducción (play, pause, volumen, etc.).
+    * `autoplay`: Inicia la reproducción al cargar la página.
+    * `loop`: Repite la reproducción al terminar.
+    * `muted`: Silencia el video.
+    * `poster`: Imagen que se muestra mientras el video se carga.
+    * `width` y `height`: Ancho y alto del reproductor.
+
+**Ejemplo:**
+
+```html
+<video controls width="640" height="360" poster="poster.jpg">
+  <source src="video.mp4" type="video/mp4">
+  <source src="video.webm" type="video/webm">
+  Tu navegador no soporta la etiqueta video.
+</video>
+```
+
+### **`<audio>`:**
+
+* **Función:** Define un reproductor de audio.
+* **Atributos principales:**
+    * `src`: Ruta al archivo de audio.
+    * `controls`: Muestra los controles de reproducción (play, pause, volumen, etc.).
+    * `autoplay`: Inicia la reproducción al cargar la página.
+    * `loop`: Repite la reproducción al terminar.
+    * `muted`: Silencia el audio.    
+
+**Ejemplo:**
+
+```html
+<audio controls src="audio.mp3">
+  Tu navegador no soporta la etiqueta audio.
+</audio>
+```
+
+### **`<source>`:**
+
+* **Función:** Define una fuente de media para `<video>` y `<audio>`. Permite especificar múltiples formatos para asegurar compatibilidad con diversos navegadores.
+* **Atributos principales:**
+    * `src`: Ruta al archivo de media.
+    * `type`: Tipo MIME del archivo (por ejemplo, "video/mp4").
+
+**Ejemplo:**
+
+```html
+<video controls>
+  <source src="video.mp4" type="video/mp4">
+  <source src="video.webm" type="video/webm">
+  Tu navegador no soporta la etiqueta video.
+</video>
+```
+
+### **`<svg>`:**
+
+* **Función:** Incrusta gráficos vectoriales escalables (SVG) en el HTML.
+* **Atributos principales:**
+    * `viewBox`: Define el área visible del gráfico.
+    * `width` y `height`: Ancho y alto del gráfico.
+
+**Ejemplo:**
+
+```html
+<svg width="100" height="100" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="40" fill="red" />
+</svg>
+```
+
+### **`<canvas>`:**
+
+* **Función:** Permite dibujar gráficos y animaciones 2D utilizando JavaScript. No contiene contenido por sí mismo, sino que se usa como un lienzo para que JavaScript lo manipule.
+* **Atributos principales:**
+    * `width` y `height`: Ancho y alto del lienzo.
+
+**Ejemplo:**
+
+```html
+<canvas id="miCanvas" width="300" height="150"></canvas>
+
+<script>
+  const canvas = document.getElementById("miCanvas");
+  const ctx = canvas.getContext("2d");
+
+  ctx.fillStyle = "blue";
+  ctx.fillRect(10, 10, 50, 50);
+</script>
+```
+
+### **`<iframe>`:**
+
+* **Función:** Incrusta contenido de otra página web.
+* **Atributos principales:**
+    * `src`: URL de la página web a incrustar.
+    * `width` y `height`: Ancho y alto del marco.
+    * `sandbox`: Permite controlar el contenido del marco.
+
+**Ejemplo:**
+
+```html
+<iframe src="https://es.wikipedia.org/wiki/Wikipedia:Portada" width="800" height="600"></iframe>
+```
+
+### **`<img>`:**
+
+* **Función:** Define una imagen.
+* **Atributos principales:**
+    * `src`: Ruta al archivo de imagen.
+    * `alt`: Texto alternativo que describe la imagen (importante para accesibilidad).
+    * `width` y `height`: Ancho y alto de la imagen (opcional, el navegador puede ajustar automáticamente).
+
+**Ejemplo:**
+
+```html
+<img src="imagen.jpg" alt="Un gato jugando con un hilo" width="200" height="150">
+```
+
+**Explicación del ejemplo:**
+
+* **`src="imagen.jpg"`:** La imagen se encuentra en el archivo "imagen.jpg" dentro del mismo directorio que el HTML.
+* **`alt="Un gato jugando con un hilo"`:** Si la imagen no se carga, se mostrará este texto alternativo. También es crucial para personas con discapacidad visual que usan lectores de pantalla.
+* **`width="200" height="150"`:** Define el ancho y alto de la imagen en píxeles. Si no se especifica, la imagen se mostrará con su tamaño original.
+
+## La etiqueta `<table>` en HTML
+
+La etiqueta `<table>` en HTML se utiliza para crear una tabla, que es una estructura de datos que organiza la información en filas y columnas. Las tablas son útiles para presentar información tabular, como datos financieros, listas de productos o calendarios.
+
+Sintaxis básica:
+
+```html
+<table>
+
+</table>
+
+```
+
+Elementos importantes dentro de la tabla:
+
+-   `<tr>`: Define una fila de la tabla.
+-   `<td>`: Define una celda dentro de una fila.
+-   `<th>`: Define una celda de encabezado dentro de una fila.
+-   `<caption>`: Define un título para la tabla.
+
+Atributos comunes de la etiqueta `<table>`:
+
+-   `border`: Especifica el grosor del borde de la tabla.
+-   `width`: Especifica el ancho de la tabla.
+-   `height`: Especifica la altura de la tabla.
+-   `cellspacing`: Especifica el espacio entre las celdas.
+-   `cellpadding`: Especifica el espacio entre el contenido y el borde de las celdas.
+-   `align`: Especifica la alineación de la tabla (izquierda, derecha o centro).
+
+Ejemplo de una tabla simple:
+
+
+```html
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Edad</th>
+  </tr>
+  <tr>
+    <td>Juan</td>
+    <td>25</td>
+  </tr>
+  <tr>
+    <td>María</td>
+    <td>30</td>
+  </tr>
+</table>
+```
+
+### Etiquetas `<thead>`, `<tbody>` y `<tfoot>` en HTML
+
+Las etiquetas `<thead>`, `<tbody>` y `<tfoot>` se utilizan para definir las diferentes secciones de una tabla en HTML. Estas etiquetas son importantes para mejorar la accesibilidad, la legibilidad y el estilo de las tablas.
+
+### `<thead>` (Encabezado):
+
+-   Define la sección de encabezado de la tabla.
+-   Contiene los títulos de las columnas.
+-   Se suele mostrar en negrita o con un estilo diferente para que sea fácilmente visible.
+-   Ejemplo:
+
+
+```html
+<thead>
+  <tr>
+    <th>Nombre</th>
+    <th>Edad</th>
+  </tr>
+</thead>
+
+```
+
+### `<tbody>` (Cuerpo):
+
+-   Define la sección del cuerpo de la tabla.
+-   Contiene los datos de la tabla.
+-   Puede contener filas y celdas con diferentes formatos.
+-   Ejemplo:
+
+```html
+<tbody>
+  <tr>
+    <td>Juan</td>
+    <td>25</td>
+  </tr>
+  <tr>
+    <td>María</td>
+    <td>30</td>
+  </tr>
+</tbody>
+
+```
+
+### `<tfoot>` (Pie de página):
+
+-   Define la sección de pie de página de la tabla.
+-   Se puede usar para mostrar información adicional, como totales o resúmenes.
+-   No es obligatorio usar esta etiqueta.
+-   Ejemplo:
+
+```html
+<tfoot>
+  <tr>
+    <th colspan="2">Total</th>
+    <td>55</td>
+  </tr>
+</tfoot>
+
+```
+
+#### Beneficios de usar estas etiquetas:
+
+-   Accesibilidad: Las etiquetas ayudan a los lectores de pantalla a comprender la estructura de la tabla.
+-   Legibilidad: Las etiquetas ayudan a los usuarios a identificar las diferentes secciones de la tabla.
+-   Estilo: Las etiquetas permiten aplicar diferentes estilos a cada sección de la tabla.
+
+#### Ejemplo completo de una tabla con `<thead>`, `<tbody>` y `<tfoot>`:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabla de empleados</title> 
+</head>
+<body>
+  <h1>Tabla de empleados</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Edad</th>
+        <th>Cargo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Juan Pérez</td>
+        <td>25</td>
+        <td>Desarrollador</td>
+      </tr>
+      <tr>
+        <td>María García</td>
+        <td>30</td>
+        <td>Diseñadora</td>
+      </tr>
+      <tr>
+        <td>Pedro López</td>
+        <td>40</td>
+        <td>Gerente</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th colspan="3">Total de empleados: 3</th>
+      </tr>
+    </tfoot>
+  </table>
+</body>
+</html>
+
+```
+
+#### Explicación del código:
+
+-   Se define el tipo de documento como HTML5.
+-   Se define el idioma de la página como español.
+-   Se define el título de la página.
+-   Se crea un encabezado para la tabla.
+-   Se crea el cuerpo de la tabla con filas y celdas.
+-   Se crea un pie de página para la tabla con información adicional.
+
+## Actividad de clase
+
+"Creación de una tabla HTML multimedia"
+
+Objetivo: Crear una tabla HTML que incorpore varios elementos multimedia y utilice las etiquetas y atributos aprendidos.
+
+Instrucciones:
+
+1.  Crea una tabla HTML que represente un catálogo de productos multimedia.
+2.  La tabla debe incluir las siguientes columnas:
+    -   Producto
+    -   Descripción
+    -   Vista previa
+    -   Precio
+3.  Utiliza las etiquetas `<thead>`, `<tbody>` y `<tfoot>` para estructurar la tabla.
+4.  Incluye al menos 4 productos diferentes. Cada producto debe tener:
+    -   Un nombre
+    -   Una breve descripción
+    -   Una vista previa multimedia (usa diferentes etiquetas para cada producto):
+        -   Un video (`<video>`)
+        -   Una imagen (`<img>`)
+        -   Un audio (`<audio>`)
+        -   Un gráfico SVG (`<svg>`)
+    -   Un precio
+5.  Utiliza los atributos `colspan` y `rowspan` al menos una vez en la tabla.
+6.  En el pie de la tabla (`<tfoot>`), incluye una fila con el total de productos y el precio total, usando `colspan` para que abarque todas las columnas.
+7.  Asegúrate de que todos los elementos multimedia tengan los atributos necesarios (como `controls` para video y audio, `alt` para imágenes, etc.)
+8.  Usa el atributo `width` para ajustar el tamaño de la tabla y sus columnas.
+
+Ejemplo de estructura básica:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo Multimedia</title>
+</head>
+<body>
+    <h1>Catálogo de Productos Multimedia</h1>
+    <table width="100%">
+        <thead>
+            <!-- Encabezados de la tabla -->
+        </thead>
+        <tbody>
+            <!-- Filas de productos -->
+        </tbody>
+        <tfoot>
+            <!-- Resumen y totales -->
+        </tfoot>
+    </table>
+</body>
+</html>
+```
