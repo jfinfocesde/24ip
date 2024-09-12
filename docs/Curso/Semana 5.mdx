@@ -254,3 +254,88 @@ Aquí algunos puntos clave sobre Git Pages:
 ### Video tutorial
 
 <iframe src="https://player.vimeo.com/video/923436262?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="90%" height="720" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="GitGithub"></iframe>
+
+## Tutorial de manejo de branches en Git y GitHub
+
+Este tutorial te guiará en el manejo de branches en Git y GitHub, cubriendo desde lo básico hasta conceptos avanzados.
+
+### 1. Conceptos básicos
+
+* **Repositorio:** Un repositorio Git es una carpeta que contiene todos los archivos de un proyecto, junto con el historial de cambios.
+* **Branch:** Una branch es una copia independiente del repositorio, permitiendo trabajar en nuevas funcionalidades sin afectar el código principal.
+* **Master (main):** La branch principal, donde se almacenan las versiones estables del proyecto.
+* **Commit:** Una confirmación de los cambios realizados en el repositorio, creando un punto de referencia en el historial.
+
+### 2. Creando y manejando branches
+
+**2.1 Creando una nueva branch:**
+
+```bash
+git checkout -b <nombre_de_branch> 
+```
+
+Ejemplo: `git checkout -b feature-login` crea una nueva branch llamada "feature-login".
+
+**2.2 Listando las branches:**
+
+```bash
+git branch
+```
+
+**2.3 Cambiando de branch:**
+
+```bash
+git checkout <nombre_de_branch>
+```
+
+**2.4 Fusionando branches:**
+
+```bash
+git checkout master
+git merge <nombre_de_branch>
+```
+
+**2.5 Eliminando una branch:**
+
+```bash
+git branch -d <nombre_de_branch>
+```
+
+**2.6 Resolviendo conflictos:**
+
+Si las dos branches que se fusionan tienen cambios en los mismos archivos, Git mostrará un conflicto. Deberás editar el archivo manualmente y luego usar:
+
+```bash
+git add <archivo_conflictivo>
+git commit -m "Resuelto conflicto en <archivo>"
+```
+
+### 3. Trabajando con GitHub
+
+**3.1 Creando un repositorio en GitHub:**
+
+Crea un nuevo repositorio en GitHub y copia la URL.
+
+**3.2 Clonar el repositorio:**
+
+```bash
+git clone <URL_del_repositorio>
+```
+
+**3.3 Push y Pull:**
+
+* **Push:**  Envía los cambios de tu branch local al repositorio remoto en GitHub.
+```bash
+git push origin <nombre_de_branch>
+```
+* **Pull:** Descarga los cambios del repositorio remoto a tu branch local.
+```bash
+git pull origin <nombre_de_branch>
+```
+
+**3.4 Creando una Pull Request (PR):**
+
+* Crea una nueva PR desde tu branch en GitHub.
+* Describe los cambios y solicita revisión por parte de otros colaboradores.
+* Una vez aprobada, se fusiona la PR a la branch principal.
+
