@@ -3,3 +3,198 @@ sidebar_position: 7
 draft: true
 slug: /semana7
 ---
+
+# Semana 7
+
+## Ramas (Branches) en Git y GitHub: Una Explicación Detallada
+
+Las ramas en Git y GitHub son una herramienta fundamental para el desarrollo colaborativo y la gestión de versiones. Permiten a los desarrolladores trabajar de forma independiente en nuevas funcionalidades, corregir errores o realizar experimentos sin afectar el código principal.
+
+### **¿Qué son las ramas?**
+
+Imagina un árbol con un tronco principal y varias ramas que salen de él. El tronco principal representa tu código base principal, mientras que las ramas son versiones alternativas de ese código. Puedes crear una rama para trabajar en una nueva función, corregir un error o probar una idea sin afectar el código base.
+
+### **¿Por qué usar ramas?**
+
+* **Desarrollo independiente:** Permite a varios desarrolladores trabajar simultáneamente en diferentes partes del proyecto sin interferir entre sí.
+* **Gestión de versiones:** Facilita la gestión de diferentes versiones del código, permitiendo volver a versiones anteriores si es necesario.
+* **Pruebas y experimentación:** Crea un entorno seguro para probar nuevas funcionalidades o realizar cambios experimentales sin riesgo de afectar el código principal.
+* **Colaboración:** Permite a los desarrolladores compartir su trabajo de forma eficiente y evitar conflictos de código.
+
+###  **Comandos básicos de Git para trabajar con ramas:**
+
+1. **Crear una nueva rama:**
+
+```bash
+git checkout -b nombre_de_la_rama
+```
+
+Este comando crea una nueva rama con el nombre especificado y cambia al nuevo branch.
+
+2. **Ver las ramas existentes:**
+
+```bash
+git branch
+```
+
+Muestra una lista de todas las ramas del repositorio, con un asterisco (*) que indica la rama actual.
+
+3. **Cambiar de rama:**
+
+```bash
+git checkout nombre_de_la_rama
+```
+
+Cambia la rama actual a la especificada.
+
+4. **Fusionar una rama con la rama principal:**
+
+```bash
+git checkout main
+git merge nombre_de_la_rama
+```
+
+Este comando fusiona el contenido de la rama especificada con la rama principal.
+
+5. **Eliminar una rama:**
+
+```bash
+git branch -d nombre_de_la_rama
+```
+
+Este comando elimina la rama especificada.
+
+**Trabajando con GitHub:**
+
+1. **Crear una nueva rama en GitHub:**
+
+   * En la página del repositorio, haz clic en el botón "Code" y selecciona "Create a new branch".
+   * Introduce un nombre para la rama y haz clic en "Create branch".
+
+2. **Enviar cambios a GitHub:**
+
+   * Después de realizar los cambios en la rama local, haz commit de esos cambios.
+   * Envía los cambios a GitHub con el comando `git push origin nombre_de_la_rama`.
+
+3. **Fusionar una rama en GitHub:**
+
+   * Accede a la página del repositorio en GitHub.
+   * Ve a la pestaña "Pull requests".
+   * Crea una nueva "Pull request" seleccionando la rama que quieres fusionar y la rama principal.
+   * Escribe una descripción del cambio y haz clic en "Create pull request".
+
+4. **Revisar y aprobar el código:**
+
+   * Los miembros del equipo pueden revisar el código de la "pull request".
+   * Si el código está aprobado, se fusiona en la rama principal.
+
+## Actividad:
+
+### Crea una página web básica con HTML usando Git (con ramas)
+
+Esta actividad te guiará paso a paso en la creación de una página web básica utilizando HTML y Git, mostrando cómo crear ramas y fusionarlas.
+
+**Requisitos:**
+
+* Un editor de texto (Notepad, Sublime Text, VS Code)
+* Git instalado en tu ordenador
+* Un navegador web (Chrome, Firefox, Safari)
+
+**Paso 1: Iniciar un nuevo repositorio de Git**
+
+1. **Abre una terminal o línea de comandos.**
+2. **Crea una nueva carpeta para tu proyecto:**
+   ```bash
+   mkdir mi-pagina-web
+   ```
+3. **Navega a la carpeta del proyecto:**
+   ```bash
+   cd mi-pagina-web
+   ```
+4. **Inicializa un repositorio Git:**
+   ```bash
+   git init
+   ```
+
+**Paso 2: Crear el archivo HTML base**
+
+1. **Crea un nuevo archivo llamado "index.html" en la carpeta del proyecto.**
+2. **Abre el archivo "index.html" en tu editor de texto.**
+3. **Agrega la estructura básica HTML:**
+   ```html
+   <!DOCTYPE html>
+   <html lang="es">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Mi página web</title>
+   </head>
+   <body>
+       <h1>¡Hola, mundo!</h1>
+       <p>Esta es mi primera página web.</p>
+   </body>
+   </html>
+   ```
+4. **Guarda el archivo "index.html".**
+5. **Agrega el archivo al repositorio de Git:**
+   ```bash
+   git add index.html
+   ```
+6. **Crea un nuevo commit con un mensaje descriptivo:**
+   ```bash
+   git commit -m "Creación de la página web base"
+   ```
+
+**Paso 3: Crear una nueva rama para agregar una sección**
+
+1. **Crea una nueva rama llamada "seccion-nueva":**
+   ```bash
+   git checkout -b seccion-nueva
+   ```
+
+**Paso 4: Modificar el archivo HTML en la nueva rama**
+
+1. **Abre el archivo "index.html" y agrega una nueva sección con un título y un párrafo:**
+   ```html
+   <!DOCTYPE html>
+   <html lang="es">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Mi página web</title>
+   </head>
+   <body>
+       <h1>¡Hola, mundo!</h1>
+       <p>Esta es mi primera página web.</p>
+       <section>
+           <h2>Nueva Sección</h2>
+           <p>Contenido de la nueva sección.</p>
+       </section>
+   </body>
+   </html>
+   ```
+2. **Guarda los cambios en "index.html".**
+3. **Agrega los cambios al repositorio de Git:**
+   ```bash
+   git add index.html
+   ```
+4. **Crea un nuevo commit con un mensaje descriptivo:**
+   ```bash
+   git commit -m "Agregar una nueva sección"
+   ```
+
+**Paso 5: Fusionar la rama "seccion-nueva" con la rama principal**
+
+1. **Cambia de nuevo a la rama principal:**
+   ```bash
+   git checkout main
+   ```
+2. **Fusiona la rama "seccion-nueva" con la rama principal:**
+   ```bash
+   git merge seccion-nueva
+   ```
+3. **Resuelve cualquier conflicto si es necesario.**
+4. **Crea un nuevo commit con un mensaje descriptivo:**
+   ```bash
+   git commit -m "Fusionar la rama seccion-nueva"
+   ```
