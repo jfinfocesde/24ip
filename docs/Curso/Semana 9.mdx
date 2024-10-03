@@ -1,5 +1,192 @@
 ---
 sidebar_position: 9
-draft: true
+draft: false
 slug: /semana9
 ---
+
+import CodePenEmbed from '@site/src/components/CodePenEmbed';
+
+# Semana 9
+
+## Unidades Absolutas y Relativas en CSS
+
+Las unidades en CSS se utilizan para especificar tamaños, distancias y otras propiedades visuales. Se pueden dividir en dos tipos principales: unidades absolutas y unidades relativas.
+
+### **1. Unidades Absolutas:**
+
+* **Definen un tamaño fijo, independiente del contexto.** 
+* **No cambian de tamaño según el tamaño de la fuente o del contenedor.**
+* **Utilizadas para elementos que necesitan un tamaño específico, como logotipos o imágenes.**
+
+**Ejemplos de unidades absolutas:**
+
+* **px (píxeles):** La unidad más común. Un píxel es un punto en la pantalla. 
+* **pt (puntos):** 1 punto equivale a 1/72 de pulgada. Usada tradicionalmente en impresión.
+* **in (pulgadas):**  Equivale a 2.54 cm. Utilizada en diseño de impresión.
+* **cm (centímetros):** Equivale a 10 mm. Utilizada en diseño de impresión.
+* **mm (milímetros):** Equivale a 1/10 de centímetro. Utilizada en diseño de impresión.
+
+<CodePenEmbed 
+  slugHash="wvVGwQd"
+  user="jhon-valencia-the-encoder"
+  title="Unidades Absolutas"
+  height={300}
+/>
+
+### **2. Unidades Relativas:**
+
+* **Definen un tamaño que es relativo al contexto, como el tamaño de la fuente o el tamaño del contenedor.**
+* **Adaptan su tamaño según los cambios en el contexto.**
+* **Útiles para crear diseños flexibles y adaptables.**
+
+**Ejemplos de unidades relativas:**
+
+* **em:**  Relativa al tamaño de la fuente del elemento padre. 1em equivale al tamaño de la fuente actual.
+* **rem:** Relativa al tamaño de la fuente del elemento raíz (HTML). 1rem equivale al tamaño de fuente de `html`.
+* **%:**  Relativa al tamaño del contenedor padre. 100% ocupa todo el ancho del contenedor.
+* **vw:**  Relativa al ancho de la ventana del navegador. 1vw equivale al 1% del ancho de la ventana.
+* **vh:**  Relativa a la altura de la ventana del navegador. 1vh equivale al 1% de la altura de la ventana.
+
+<CodePenEmbed 
+  slugHash="RwXabEr"
+  user="jhon-valencia-the-encoder"
+  title="Unidades Relativas"
+  height={300}
+/>
+
+**Ejemplo:**
+
+```css
+/* Ejemplo de unidades absolutas y relativas */
+h1 {
+  font-size: 24px; /* Tamaño de fuente absoluto en píxeles */
+  margin-bottom: 1em; /* Margen inferior relativo al tamaño de la fuente del elemento padre */
+}
+
+.container {
+  width: 80%; /* Ancho relativo al contenedor padre */
+  padding: 20px; /* Relleno absoluto en píxeles */
+}
+
+.image {
+  width: 200px; /* Ancho absoluto en píxeles */
+  height: 150px; /* Alto absoluto en píxeles */
+}
+```
+
+#### **Cuándo usar cada tipo de unidad:**
+
+* **Unidades absolutas:** Para elementos con un tamaño fijo, como logotipos, iconos o imágenes que deben mantener su tamaño independientemente del contexto.
+* **Unidades relativas:** Para diseños flexibles y adaptables, donde el tamaño de los elementos debe ajustarse según el tamaño de la fuente o del contenedor, o el tamaño de la ventana del navegador.
+
+### **3. Unidades vh y vw:**
+
+Control de diseño basado en la ventana del navegador
+
+Las unidades `vh` y `vw` en CSS se utilizan para definir tamaños y posiciones relativas al **tamaño de la ventana del navegador**. Son unidades muy útiles para crear diseños web responsivos y adaptables, especialmente cuando se necesita que los elementos se ajusten al tamaño de la pantalla del usuario.
+
+**vh (viewport height):**
+
+* Define un tamaño relativo a la **altura** de la ventana del navegador.
+* 1vh equivale al 1% de la altura de la ventana del navegador.
+
+**Ejemplo:**
+
+```css
+.container {
+  height: 50vh; /* La altura del contenedor será el 50% de la altura de la ventana del navegador */
+}
+```
+
+**vw (viewport width):**
+
+* Define un tamaño relativo al **ancho** de la ventana del navegador.
+* 1vw equivale al 1% del ancho de la ventana del navegador.
+
+**Ejemplo:**
+
+```css
+.image {
+  width: 30vw; /* El ancho de la imagen será el 30% del ancho de la ventana del navegador */
+}
+```
+
+**Beneficios de usar vh y vw:**
+
+* **Diseño responsivo:**  Los elementos se adaptan automáticamente al tamaño de la pantalla del usuario, lo que crea una experiencia web más fluida en diferentes dispositivos.
+* **Flexibilidad:**  Permiten crear diseños dinámicos que se ajustan al tamaño de la ventana del navegador, sin necesidad de utilizar consultas de medios (media queries).
+* **Facilidad de uso:**  Son fáciles de entender y usar en comparación con otras unidades relativas.
+
+**Ejemplos de uso:**
+
+* **Establecer la altura de un encabezado o pie de página:**  `header { height: 10vh; }`
+* **Ajustar el tamaño de una imagen o video:**  `img { width: 50vw; }`
+* **Controlar el espacio entre elementos:**  `margin-bottom: 5vh;`
+* **Crear diseños de columnas flexibles:**  `div { width: 25vw; }`
+
+<CodePenEmbed 
+  slugHash="RwXabEr"
+  user="jhon-valencia-the-encoder"
+  title="Unidades Relativas"
+  height={300}
+/>
+
+ #### Diferencias entre usar las unidades vh, vw y %
+
+Las unidades `vh`, `vw` y `%` son todas unidades relativas en CSS que se usan para definir tamaños y posiciones basados en el contexto. Aunque pueden parecer similares, existen diferencias importantes en su comportamiento y aplicaciones:
+
+**vh (viewport height):**
+
+* **Se basa en la altura de la ventana del navegador.**
+* **1vh equivale al 1% de la altura de la ventana del navegador.**
+* **Ideal para:**
+    * Establecer alturas de elementos que deben ocupar una parte proporcional de la altura de la ventana, como encabezados o pies de página.
+    * Crear diseños que se ajusten a la altura de la pantalla, como diseños de una sola página.
+    * Adaptar el espacio entre elementos basados en la altura de la ventana.
+
+**vw (viewport width):**
+
+* **Se basa en el ancho de la ventana del navegador.**
+* **1vw equivale al 1% del ancho de la ventana del navegador.**
+* **Ideal para:**
+    * Establecer anchos de elementos que deben ocupar una parte proporcional del ancho de la ventana, como columnas o imágenes.
+    * Adaptar el espacio entre elementos basados en el ancho de la ventana.
+    * Crear diseños de columnas flexibles que se ajusten al ancho de la pantalla.
+
+**% (Porcentaje):**
+
+* **Se basa en el tamaño del elemento padre.**
+* **100% equivale al 100% del tamaño del elemento padre.**
+* **Ideal para:**
+    * Establecer el ancho o alto de un elemento como una fracción del tamaño de su contenedor padre.
+    * Crear diseños flexibles que se ajustan al tamaño del contenedor padre.
+    * Adaptar el relleno o margen de un elemento al tamaño de su contenedor padre.
+
+**Diferencias Clave:**
+
+* **Punto de referencia:** `vh` y `vw` se basan en el tamaño de la ventana del navegador, mientras que `%` se basa en el tamaño del elemento padre.
+* **Escalabilidad:**  `vh` y `vw` se ajustan al tamaño de la ventana del navegador, mientras que `%` se ajusta al tamaño del elemento padre.
+* **Aplicaciones:** `vh` y `vw` son ideales para diseños responsivos que se adaptan al tamaño de la pantalla del usuario, mientras que `%` es útil para crear diseños flexibles que se ajusten al tamaño del contenedor padre.
+
+<CodePenEmbed 
+  slugHash="GRVZKbN"
+  user="jhon-valencia-the-encoder"
+  title="Diferencias entre usar las unidades vh, vw y %"
+  height={300}
+/>
+
+## Actividad: ¡Pon a Prueba tus Conocimientos de CSS!
+
+**Objetivo:** Afianzar la comprensión de los atributos CSS a través de la práctica.
+
+**Instrucciones:**
+
+1. **Analiza y Prueba:** Revisa cuidadosamente cada uno de los ejemplos de la sesión. 
+   - Identifica los atributos CSS utilizados.
+   - Comprende el efecto visual o funcional que genera cada atributo.
+   - Investiga en la documentación oficial de CSS para obtener información adicional.
+2. **Experimenta en Visual Studio Code:** 
+   - Crea un nuevo proyecto en Visual Studio Code.
+   - Implementa los ejemplos de la sesión en archivos HTML y CSS.
+   - Realiza pruebas para observar cómo funcionan los diferentes atributos.
+   - Experimenta con modificaciones en los valores de los atributos para ver cómo afecta al resultado final.
