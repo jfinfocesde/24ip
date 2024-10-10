@@ -3,3 +3,185 @@ sidebar_position: 11
 draft: true
 slug: /semana11
 ---
+import CodePenEmbed from '@site/src/components/CodePenEmbed';
+
+# Semana 11
+
+## Guía Completa de Flexbox
+
+### ¿Qué es Flexbox?
+Flexbox (Flexible Box Module) es un modelo de diseño CSS que permite crear diseños flexibles y responsivos. Está diseñado específicamente para distribuir espacio y alinear elementos dentro de un contenedor, incluso cuando sus tamaños son desconocidos o dinámicos.
+
+### Conceptos Básicos
+
+#### 1. Contenedor Flex (Flex Container)
+Es el elemento padre que contiene los elementos flex. Se crea usando:
+```css
+display: flex;
+```
+
+#### 2. Elementos Flex (Flex Items)
+Son los hijos directos del contenedor flex. Automáticamente se convierten en elementos flexibles.
+
+## Propiedades del Contenedor Flex
+
+### 1. flex-direction
+Determina la dirección principal del contenedor:
+- `row` (default): izquierda a derecha
+- `row-reverse`: derecha a izquierda
+- `column`: arriba hacia abajo
+- `column-reverse`: abajo hacia arriba
+
+### 2. justify-content
+Alinea elementos en el eje principal:
+- `flex-start`: elementos al inicio
+- `flex-end`: elementos al final
+- `center`: elementos al centro
+- `space-between`: espacio igual entre elementos
+- `space-around`: espacio igual alrededor de elementos
+- `space-evenly`: espacio igual entre y alrededor
+
+### 3. align-items
+Alinea elementos en el eje transversal:
+- `stretch` (default): estira elementos
+- `flex-start`: elementos arriba/inicio
+- `flex-end`: elementos abajo/final
+- `center`: elementos centrados
+- `baseline`: alineados por línea base del texto
+
+### 4. flex-wrap
+Controla el desbordamiento de elementos:
+- `nowrap` (default): una sola línea
+- `wrap`: múltiples líneas
+- `wrap-reverse`: múltiples líneas en reversa
+
+### 5. gap
+Espacio entre elementos:
+- `gap`: espacio en ambas direcciones
+- `row-gap`: espacio entre filas
+- `column-gap`: espacio entre columnas
+
+## Propiedades de los Elementos Flex
+
+### 1. flex-grow
+- Determina cuánto puede crecer un elemento
+- Valor por defecto: 0
+- Valores mayores = más crecimiento
+
+### 2. flex-shrink
+- Determina cuánto puede encogerse
+- Valor por defecto: 1
+- Valores mayores = más encogimiento
+
+### 3. flex-basis
+- Tamaño base del elemento
+- Puede ser en px, %, auto, etc.
+
+### 4. orden
+- Controla el orden de aparición
+- Valor por defecto: 0
+- Valores negativos permitidos
+
+## Casos de Uso Comunes
+
+1. **Centrado Perfecto**
+```css
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+```
+
+2. **Navegación Responsiva**
+```css
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+```
+
+3. **Distribución Equitativa**
+```css
+.item {
+    flex: 1;  /* Todos los elementos ocupan el mismo espacio */
+}
+```
+
+## Ventajas de Flexbox
+
+1. **Simplicidad**
+   - Código más limpio y mantenible
+   - Menos necesidad de hacks CSS
+
+2. **Responsividad**
+   - Adaptable a diferentes tamaños de pantalla
+   - Manejo flexible del espacio
+
+3. **Control Bidireccional**
+   - Control sobre ejes vertical y horizontal
+   - Fácil alineación en ambas direcciones
+
+4. **Orden Dinámico**
+   - Reordenamiento visual sin cambiar HTML
+   - Útil para diseño responsivo
+
+## Ejemplos Flexbox
+
+### Flexbox Atributos
+
+<CodePenEmbed 
+  slugHash="xxvRRaP"
+  user="jhon-valencia-the-encoder"
+  title="Flexbox"
+  height={300}
+/>
+
+### Layout Básico
+
+<CodePenEmbed 
+  slugHash="MWNbbxJ"
+  user="jhon-valencia-the-encoder"
+  title="Layout Básico"
+  height={300}
+/>
+
+### Holy Grail Layout
+
+<CodePenEmbed 
+  slugHash="qBeqqwY"
+  user="jhon-valencia-the-encoder"
+  title="Holy Grail Layout"
+  height={300}
+/>
+
+### Card Grid Layout
+
+<CodePenEmbed 
+  slugHash="LYwbboB"
+  user="jhon-valencia-the-encoder"
+  title="Card Grid Layout"
+  height={300}
+/>
+
+## Aplicaciones para practicar Flexbox
+
+- [https://flexboxfroggy.com/#es](https://flexboxfroggy.com/#es)
+
+- [https://angrytools.com/css-flex/](https://angrytools.com/css-flex/)
+
+## Actividad: ¡Pon a Prueba tus Conocimientos de CSS!
+
+**Objetivo:** Afianzar la comprensión de los atributos CSS a través de la práctica.
+
+**Instrucciones:**
+
+1. **Analiza y Prueba:** Revisa cuidadosamente cada uno de los ejemplos de la sesión. 
+   - Identifica los atributos CSS utilizados.
+   - Comprende el efecto visual o funcional que genera cada atributo.
+   - Investiga en la documentación oficial de CSS para obtener información adicional.
+2. **Experimenta en Visual Studio Code:** 
+   - Crea un nuevo proyecto en Visual Studio Code.
+   - Implementa los ejemplos de la sesión en archivos HTML y CSS.
+   - Realiza pruebas para observar cómo funcionan los diferentes atributos.
+   - Experimenta con modificaciones en los valores de los atributos para ver cómo afecta al resultado final.
