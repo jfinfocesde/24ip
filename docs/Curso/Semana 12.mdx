@@ -6,11 +6,192 @@ slug: /semana12
 
 # Semana 12
 
-## Evaluación Momento 1 
+## Evaluación Momento 2 
 
-### 1. Evaluación de conocimientos (40%) - 1 Hora
+### 1. Evaluación de conocimientos (40%) - Tiempo: 1 Hora
 
 Por favor, complete la evaluación de conocimientos haciendo clic en el siguiente enlace y utilice el código asignado por el docente
 
 [https://quizizz.com/join](https://quizizz.com/join)
+
+
+### 2. Actividad: Explorando Propiedades CSS con un Layout de index (60%) - Tiempo: 1 Hora
+
+**Objetivo:** Esta actividad te guiará paso a paso en la creación de un layout de tarjetas utilizando HTML y CSS, permitiéndote aplicar y comprender diferentes propiedades CSS como `display`, `margin`, `padding`, `position`, `flexbox` y unidades de medida (`px`, `em`, `rem`, `vh`, `vw`, `%`).
+
+:::info[**Criterios de Evaluación:**]
+
+*   **Orden de la ejecución paso a paso:** Se evaluará que los pasos se realicen en el orden indicado.
+*   **Funcionamiento:** Se evaluará que el código funcione correctamente y se visualice el layout de tarjetas según las especificaciones.
+*   **Documentación del código:** Se evaluará la calidad y la precisión de los comentarios dentro del código CSS, asegurando que se explique claramente la función de cada selector y atributo.
+*   **Manejo de repositorio:** Se evaluará el uso adecuado de las herramientas de Git (add, commit, push) y la organización del repositorio, mostrando un manejo eficiente del control de versiones.
+:::
+
+**Paso 0: Creación del Repositorio en GitHub**
+
+1.  **Crea una cuenta en GitHub:** [https://github.com/](https://github.com/).
+2.  **Crea un nuevo repositorio:**
+    *   Haz clic en el botón "+" en la esquina superior derecha.
+    *   Selecciona "New repository".
+    *   Dale un nombre a tu repositorio (por ejemplo, "Evaluación_M2").   
+    *   Selecciona "Public"
+    *   Inicializa el repositorio con un archivo README.md.
+    *   Haz clic en "Create repository".
+
+**Paso 1: Clonación del Repositorio**
+
+1.  **Clona el repositorio:**
+    *   Haz clic en el botón verde "Code".
+    *   Copia la URL del repositorio.
+    *   En tu terminal, utiliza el comando `git clone <url-del-repositorio>`.
+
+**Paso 2: Creación de la Estructura HTML**
+
+1.  **Crea un nuevo archivo HTML:** En tu editor de texto, crea un nuevo archivo y guárdalo como `index.html`.
+2.  **Agrega la estructura básica HTML:**  Inserta el siguiente código HTML en tu archivo `index.html`:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout de tarjetas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="contenedor">
+        <div class="tarjeta">
+            <img src="imagen1.jpg" alt="Imagen 1"> 
+            <h3>Título de la Tarjeta 1</h3>
+            <p>Descripción breve de la tarjeta 1. Puedes agregar más contenido aquí.</p>
+        </div>
+        <div class="tarjeta">
+            <img src="imagen2.jpg" alt="Imagen 2">
+            <h3>Título de la Tarjeta 2</h3>
+            <p>Descripción breve de la tarjeta 2. Puedes agregar más contenido aquí.</p>
+        </div>
+        <div class="tarjeta">
+            <img src="imagen3.jpg" alt="Imagen 3">
+            <h3>Título de la Tarjeta 3</h3>
+            <p>Descripción breve de la tarjeta 3. Puedes agregar más contenido aquí.</p>
+        </div>
+    </div>
+</body>
+</html>
+```
+
+**Paso 3: Creación del Archivo CSS**
+
+1.  **Crea un nuevo archivo CSS:** En la misma carpeta donde guardaste `index.html`, crea un nuevo archivo llamado `style.css`.
+
+**Paso 4: Estilos Generales del Contenedor**
+
+1.  **Abre `style.css`:**  En tu editor de texto, abre el archivo `style.css`.
+2.  **Añade los estilos básicos:**
+
+```css
+/* Agrega un comentario aquí para explicar la función del selector body */
+body {
+    /* Agrega un comentario aquí para explicar el atributo font-family */
+    font-family: sans-serif;
+    /* Agrega un comentario aquí para explicar el atributo margin */
+    margin: 0;
+}
+
+/* Agrega un comentario aquí para explicar la función del selector .contenedor */
+.contenedor {
+    /* Agrega un comentario aquí para explicar el atributo display */
+    display: flex; 
+    /* Agrega un comentario aquí para explicar el atributo flex-wrap */
+    flex-wrap: wrap; 
+    /* Agrega un comentario aquí para explicar el atributo justify-content */
+    justify-content: space-around; 
+    /* Agrega un comentario aquí para explicar el atributo padding */
+    padding: 20px;
+}
+```
+
+**Paso 5: Estilos de las tarjetas**
+
+1.  **Estiliza las tarjetas:**
+
+```css
+/* Agrega un comentario aquí para explicar la función del selector .tarjeta */
+.tarjeta {
+    /* Agrega un comentario aquí para explicar el atributo width */
+    width: 300px; 
+    /* Agrega un comentario aquí para explicar el atributo margin */
+    margin: 10px; 
+    /* Agrega un comentario aquí para explicar el atributo border */
+    border: 1px solid #ccc; 
+    /* Agrega un comentario aquí para explicar el atributo padding */
+    padding: 20px; 
+    /* Agrega un comentario aquí para explicar el atributo border-radius */
+    border-radius: 5px; 
+    /* Agrega un comentario aquí para explicar el atributo box-shadow */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+```
+
+**Paso 6: Estilos de las Imágenes**
+
+1.  **Ajusta las imágenes:**
+
+```css
+/* Agrega un comentario aquí para explicar la función del selector .tarjeta img */
+.tarjeta img {
+    /* Agrega un comentario aquí para explicar el atributo width */
+    width: 100%; 
+    /* Agrega un comentario aquí para explicar el atributo height */
+    height: auto; 
+    /* Agrega un comentario aquí para explicar el atributo display */
+    display: block; 
+    /* Agrega un comentario aquí para explicar el atributo border-radius */
+    border-radius: 5px 5px 0 0; 
+}
+```
+
+**Paso 7: Estilos de los Títulos y Descripciones**
+
+1.  **Estiliza los títulos y descripciones:**
+
+```css
+/* Agrega un comentario aquí para explicar la función del selector .tarjeta h3 */
+.tarjeta h3 {
+    /* Agrega un comentario aquí para explicar el atributo margin-top */
+    margin-top: 10px; 
+}
+
+/* Agrega un comentario aquí para explicar la función del selector .tarjeta p */
+.tarjeta p {
+    /* Agrega un comentario aquí para explicar el atributo font-size */
+    font-size: 0.9em; 
+    /* Agrega un comentario aquí para explicar el atributo line-height */
+    line-height: 1.5; 
+}
+```
+
+**Paso 8: Subir los Cambios al Repositorio**
+
+1.  **Agrega los archivos al área de seguimiento:** `git add .`
+2.  **Crea un commit con un mensaje descriptivo:** `git commit -m "Inicialización del layout de index"`
+3.  **Envía los cambios al repositorio remoto:** `git push origin main` 
+
+**Paso 9: Publica el sitio web en Github Pages**
+
+
+:::info[Entrega]
+
+
+1. **Crea un repositorio de GitHub**   
+2. **Publica la página en GitHub Pages**   
+3. **Comparte el enlace del reposositorio y de la página públicada en un documento de Google Docs**    
+4. **Comparte el enlace al documento de Google Docs en el archivo de evidencias en la semana 12:**
+:::
+
+:::warning
+Nota: No se tendrán en cuenta las actualizaciones del repositorio posteriores a la fecha y hora de la presentación de la prueba.
+:::
+   
 
