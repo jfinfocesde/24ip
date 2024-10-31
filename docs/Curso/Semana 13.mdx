@@ -1,5 +1,1205 @@
 ---
 sidebar_position: 13
-draft: true
+draft: false
 slug: /semana13
 ---
+import CodePenEmbed from '@site/src/components/CodePenEmbed';
+import VimeoEmbed from '@site/src/components/VimeoEmbed';
+
+# Semana 13
+
+## Frameworks CSS
+
+Los frameworks CSS son herramientas esenciales para el desarrollo web moderno, ofreciendo una colección predefinida de estilos, componentes y utilidades que aceleran el proceso de diseño y desarrollo de interfaces de usuario.  Facilitan la creación de sitios web responsivos, consistentes y visualmente atractivos, ahorrando tiempo y esfuerzo a los desarrolladores.  Entre la gran variedad de frameworks disponibles, Bootstrap y Tailwind CSS se destacan como dos de las opciones más populares, aunque con enfoques significativamente diferentes.
+
+Bootstrap, un framework robusto y completo, proporciona una amplia gama de componentes pre-construidos como menús de navegación, formularios, modales y carruseles, listos para ser implementados con mínima configuración.  Su sistema de grilla basado en 12 columnas facilita la creación de layouts responsivos, adaptándose a diferentes tamaños de pantalla.  Bootstrap ofrece una solución "todo en uno" con un estilo predefinido, ideal para proyectos que buscan una rápida implementación y un aspecto visual estándar.
+
+Por otro lado, Tailwind CSS adopta un enfoque "utility-first", ofreciendo una vasta colección de clases de utilidad atómicas que permiten un control granular sobre el estilo de cada elemento.  En lugar de componentes pre-construidos, Tailwind proporciona las piezas fundamentales para construir interfaces personalizadas desde cero, fomentando la creatividad y la flexibilidad.  Aunque requiere una curva de aprendizaje inicial, la personalización y la precisión que ofrece lo convierten en una opción atractiva para proyectos que buscan un diseño único y un alto grado de control.
+
+A continuación, exploraremos en detalle las características de ambos frameworks:
+
+
+## **Bootstrap**
+
+<a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer" class="relative inline-flex items-center px-8 py-3 text-lg font-bold overflow-hidden text-gray-800 rounded-lg group">
+  <span class="absolute inset-0 w-full h-full transition duration-300 ease-out transform translate-x-0 bg-gradient-to-r from-green-400 to-blue-500 group-hover:translate-x-full"></span>
+  <span class="relative">Ir a Bootstrap</span>
+</a>
+
+### Introducción a Bootstrap
+
+Bootstrap es un kit de herramientas de desarrollo front-end de código abierto que proporciona componentes predefinidos y estilos CSS para crear sitios web y aplicaciones web responsive de manera rápida y eficiente. 
+
+**Bootstrap se puede utilizar para una variedad de proyectos web, incluyendo:**
+
+* **Prototipos rápidos:** Bootstrap permite a los desarrolladores crear prototipos de sitios web y aplicaciones web de forma rápida y sencilla, utilizando sus componentes predefinidos y estilos CSS.
+* **Sitios web de marketing:** Bootstrap es ideal para crear sitios web de marketing, como páginas de destino y sitios web de empresas.
+* **Aplicaciones web:** Bootstrap también se puede utilizar para crear aplicaciones web completas, utilizando sus componentes de JavaScript y su sistema de grillas.
+* **Sitios web personales:** Bootstrap es una excelente opción para crear sitios web personales, como blogs y portafolios.
+* **Proyectos de código abierto:** Bootstrap es una herramienta popular para proyectos de código abierto, ya que proporciona una base sólida para el desarrollo front-end.
+
+**Algunos ejemplos específicos de casos de uso de Bootstrap incluyen:**
+
+* **Creación de un formulario de contacto:** Bootstrap proporciona componentes predefinidos para formularios, como campos de entrada, botones y etiquetas.
+* **Diseño de una barra de navegación:** Bootstrap ofrece una variedad de estilos y opciones de diseño para barras de navegación.
+* **Implementación de un carrusel de imágenes:** Bootstrap incluye un componente de carrusel que facilita la creación de presentaciones de imágenes.
+* **Creación de una página de inicio responsive:** Bootstrap está diseñado para ser "mobile first", lo que significa que el diseño se adapta automáticamente a diferentes tamaños de pantalla.
+
+### Configuración de Bootstrap y sus Componentes Principales
+
+Para configurar Bootstrap en un proyecto web, necesitas incluir los archivos CSS y JavaScript de Bootstrap en tu archivo HTML. La forma más común de hacerlo es a través de un CDN (Content Delivery Network). Los CDN son servidores distribuidos globalmente que alojan los archivos de Bootstrap, lo que permite una carga más rápida de tu sitio web. 
+
+**Para incluir Bootstrap en tu proyecto, sigue estos pasos:**
+
+1. **Copia y pega el siguiente código en la sección `<head>` de tu archivo HTML:**
+
+**CSS:**
+
+```html
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+``` 
+
+**JavaScript:**
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+```
+
+2. **Plantilla básica de Bootstrap **
+
+```html
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <h1>Hello, world!</h1>
+
+    <!-- Añadir componentes bootstrap -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+```
+
+3. **Comienza a usar los componentes y estilos predefinidos de Bootstrap en tu HTML.**
+
+**Bootstrap ofrece una amplia gama de componentes de JavaScript para enriquecer la interactividad de tu sitio web, entre los que se incluyen:**
+
+* **Alertas:** Para mostrar mensajes de notificación al usuario.
+* **Botones:** Con diferentes estilos y funcionalidades para mejorar la interacción.
+* **Carruseles:** Ideales para presentaciones de imágenes.
+* **Colapso:** Permite mostrar u ocultar contenido de forma dinámica.
+* **Menús desplegables:** Facilitan la navegación por diferentes secciones de tu sitio web.
+* **Modales:** Ventanas emergentes para mostrar información adicional o realizar acciones específicas.
+* **Barras de navegación:** Ayudan a organizar el contenido y la navegación de tu sitio web.
+* **Pestañas:** Permiten organizar el contenido en diferentes secciones accesibles mediante pestañas.
+* **Paneles laterales (offcanvas):** Ofrecen un espacio adicional para mostrar contenido o menús de forma lateral.
+* **Scrollspy:** Permite realizar un seguimiento de la posición de desplazamiento del usuario en la página.
+* **Toasts:** Notificaciones flotantes que aparecen en la pantalla.
+* **Tooltips y popovers:** Permiten mostrar información adicional al pasar el cursor sobre un elemento.
+
+Estos componentes te ayudan a crear sitios web dinámicos y atractivos sin tener que escribir código JavaScript desde cero. 
+
+### Personalización de Bootstrap y Alternativas
+
+Bootstrap, un kit de herramientas de desarrollo front-end de código abierto, permite la creación rápida y eficiente de sitios web y aplicaciones web responsivos a través de componentes predefinidos y estilos CSS. Si bien Bootstrap ofrece una base sólida para el diseño web, es posible que desees personalizarlo para adaptarlo a tus necesidades específicas. A continuación, se presentan algunas formas de personalizar Bootstrap y algunas alternativas a este framework:
+
+**Personalización de Bootstrap:**
+
+* **Creación de un tema personalizado:** Puedes crear un tema personalizado modificando las variables Sass de Bootstrap. Sass es un preprocesador CSS que te permite usar variables, funciones y otras características para escribir CSS de manera más eficiente. Puedes modificar las variables de Sass de Bootstrap para cambiar los colores, las fuentes, el espaciado y otros aspectos del diseño.
+
+
+
+```html
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* Modifica las variables de color */
+        :root {
+            --bs-primary: #0d6efd; /* Azul (valor por defecto) */
+            --bs-secondary: #6c757d; /* Gris (valor por defecto) */
+            --bs-success: #198754; /* Verde más oscuro */
+            --bs-warning: #ffca2c;  /* Amarillo dorado */
+            --bs-danger:  #d9534f; /* Rojo más oscuro */
+            --bs-info: #0dcaf0; /* Cian (valor por defecto) */
+            --bs-light: #f8f9fa; /* Gris claro (valor por defecto)*/
+            --bs-dark: #212529; /* Gris oscuro (valor por defecto)*/
+        }
+
+        /* Estilos adicionales */
+        body {
+            background-color: var(--bs-light); /* Fondo del body claro */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello, world!</h1>
+    <button class="btn btn-primary">Primario</button>
+    <button class="btn btn-secondary">Secundario</button>
+    <button class="btn btn-success">Éxito</button>
+    <div class="alert alert-warning" role="alert">
+      Una alerta!
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>
+```
+
+### Ejemplos con Bootstrap
+
+#### 1. Landing Page con Bootstrap 5
+
+<CodePenEmbed 
+  slugHash="KKORmYP"
+  user="jhon-valencia-the-encoder"
+  title="Landing Page con Bootstrap 5"
+  height={300}
+/>
+
+#### 2. Página Web con Tema Personalizado Bootstrap 5
+
+<CodePenEmbed 
+  slugHash="QWervRX"
+  user="jhon-valencia-the-encoder"
+  title="Dashboard con Sidebar usando Bootstrap 5"
+  height={300}
+/>
+
+#### 3. Página Web con Tema Personalizado Bootstrap 5
+
+<CodePenEmbed 
+  slugHash="ZEgoyEW"
+  user="jhon-valencia-the-encoder"
+  title="Página Web con Tema Personalizado Bootstrap 5"
+  height={300}
+/>
+
+
+#### 4. Ejemplos de algunos componentes
+
+*   **Alertas:**
+```html
+<div class="alert alert-primary" role="alert">
+    Este es un mensaje de alerta!
+</div>
+```
+
+Las alertas se utilizan para mensajes de notificación. Este código crea una alerta con un estilo azul claro ("primary").
+
+*   **Botones:**
+```html
+<button type="button" class="btn btn-success">Éxito</button>
+```
+
+Bootstrap ofrece botones con diferentes estilos y funcionalidades. Este código crea un botón verde ("success").
+
+*   **Carruseles:**
+```html
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+    <div class="carousel-item active">
+        <img src="imagen1.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+        <img src="imagen2.jpg" class="d-block w-100" alt="...">
+    </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+    </button>
+</div>
+```
+
+Los carruseles sirven para presentaciones de imágenes. Este código crea un carrusel básico con dos imágenes.
+
+*   **Colapso:**
+```html
+<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#contenidoColapsable" aria-expanded="false" aria-controls="contenidoColapsable">
+    Mostrar/Ocultar
+</button>
+<div class="collapse" id="contenidoColapsable">
+    <div class="card card-body">
+    Este contenido se puede mostrar u ocultar.
+    </div>
+</div>
+```
+
+El componente "Collapse" permite mostrar u ocultar contenido. Al hacer clic en el botón, el contenido dentro del div con el id "contenidoColapsable" se mostrará u ocultará.
+
+*   **Menús desplegables:**
+```html
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Menú
+    </button>
+    <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Opción 1</a></li>
+    <li><a class="dropdown-item" href="#">Opción 2</a></li>
+    </ul>
+</div>
+```
+
+Los menús desplegables ofrecen opciones al usuario. Al hacer clic en el botón "Menú", se desplegará una lista con las opciones.
+
+*   **Modales:**
+```html
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#miModal">
+    Abrir Modal
+</button>
+
+<div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="miModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="miModalLabel">Título del Modal</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+        Contenido del Modal
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary">Guardar Cambios</button>
+        </div>
+    </div>
+    </div>
+</div>
+```
+
+Los modales son ventanas emergentes que se utilizan para mostrar información o solicitar la interacción del usuario. Al hacer clic en el botón "Abrir Modal", se mostrará la ventana modal.
+
+*   **Barras de navegación:**
+```html
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+    <a class="navbar-brand" href="#">Mi Sitio Web</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Acerca de</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Contacto</a>
+        </li>
+        </ul>
+    </div>
+    </div>
+</nav>
+```
+
+Las barras de navegación se utilizan para la navegación del sitio web. Este código crea una barra de navegación básica con un menú desplegable.
+
+*   **Pestañas:**
+```html
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Inicio</button>
+    </li>
+    <li class="nav-item" role="presentation">
+    <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Perfil</button>
+    </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    Contenido de la pestaña Inicio
+    </div>
+    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    Contenido de la pestaña Perfil
+    </div>
+</div>
+```
+
+Las pestañas permiten organizar el contenido en diferentes secciones. Al hacer clic en las diferentes pestañas, se mostrará el contenido correspondiente.
+
+*   **Paneles laterales (offcanvas):**
+```html
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Alternar panel lateral</button>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Panel Lateral</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+    Contenido del panel lateral
+    </div>
+</div>
+```
+
+Los paneles laterales (offcanvas) son paneles deslizantes que se pueden usar para menús, contenido adicional, etc. Al hacer clic en el botón, se mostrará u ocultará el panel lateral.
+
+*   **Scrollspy:**
+```html
+<nav id="navbar-example" class="navbar navbar-light bg-light px-3">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <ul class="nav nav-pills">
+    <li class="nav-item">
+        <a class="nav-link active" href="#scrollspyHeading1">Sección 1</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#scrollspyHeading2">Sección 2</a>
+    </li>
+    </ul>
+</nav>
+
+<div data-bs-spy="scroll" data-bs-target="#navbar-example" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+    <h4 id="scrollspyHeading1">Sección 1</h4>
+    <p>...</p>
+    <h4 id="scrollspyHeading2">Sección 2</h4>
+    <p>...</p>
+</div>
+```
+
+Scrollspy permite rastrear la posición de desplazamiento del usuario y actualizar la navegación en consecuencia. Al desplazarse por la página, se resaltará el elemento de navegación correspondiente a la sección visible.
+
+*   **Toasts:**
+```html
+<button type="button" class="btn btn-primary" id="liveToastBtn">Mostrar Toast</button>
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+        <strong class="me-auto">Notificación</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+        ¡Hola! Este es un mensaje Toast.
+    </div>
+    </div>
+</div>
+
+<script>
+    var toastTrigger = document.getElementById('liveToastBtn')
+    var toastLiveExample = document.getElementById('liveToast')
+    if (toastTrigger) {
+    toastTrigger.addEventListener('click', function () {
+        var toast = new bootstrap.Toast(toastLiveExample)
+
+        toast.show()
+    })
+    }
+</script>
+```
+
+Los Toasts son notificaciones flotantes que desaparecen después de un tiempo. Al hacer clic en el botón "Mostrar Toast", se mostrará la notificación.
+
+*   **Tooltips y Popovers:**
+```html
+<button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip arriba">
+    Tooltip
+</button>
+
+<button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Contenido del Popover">
+    Popover
+</button>
+```
+
+Los Tooltips muestran información adicional al pasar el mouse sobre un elemento, mientras que los Popovers muestran un contenido más extenso. Al pasar el mouse sobre los botones, se mostrarán el Tooltip o el Popover.
+
+
+### Recursos para Componentes de Bootstrap
+
+Aquí tienes una lista de recursos para encontrar y utilizar componentes de Bootstrap en tus proyectos, incluyendo opciones gratuitas y de pago, además de herramientas visuales:
+
+
+**Opciones Gratuitas (o con versión gratuita):**
+
+* **Documentación oficial de Bootstrap:** https://getbootstrap.com/ - La fuente principal, con ejemplos y documentación completa.
+* **BootstrapMade:** https://bootstrapmade.com/ -  Plantillas y componentes gratuitos.
+* **Start Bootstrap:** https://startbootstrap.com/ - Temas y plantillas de inicio.
+* **FreeHTML5:** https://freehtml5.co/ - Plantillas HTML5 gratuitas, muchas de ellas basadas en Bootstrap.
+* **Themesberg:** https://themesberg.com/ -  Ofrecen algunos temas y plantillas gratuitos basados en Bootstrap, junto con opciones de pago.
+* **Creative Tim:** https://www.creative-tim.com/ -  Algunos componentes y plantillas gratuitas, junto con una amplia selección de opciones de pago.
+* **MdBootstrap:** https://mdbootstrap.com/ -  Componentes y plantillas, con una versión gratuita y opciones de pago para funcionalidades adicionales. (basado en Material Design)
+* **Bootswatch:** https://bootswatch.com/ - Temas gratuitos para personalizar el estilo visual de Bootstrap.
+
+**Opciones de Pago:**
+
+* **WrapBootstrap:** https://wrapbootstrap.com/ -  Mercado de temas y plantillas premium para Bootstrap.
+* **ThemeForest:** https://themeforest.net/category/site-templates/bootstrap - Amplia selección de temas y plantillas premium para Bootstrap.
+* **BootstrapDash:** https://www.bootstrapdash.com/ -  Temas y plantillas premium para dashboards y aplicaciones web.
+
+**Herramientas Visuales:**
+
+* **Bootstrap Studio:** https://bootstrapstudio.io/ -  Herramienta de diseño visual para crear interfaces con Bootstrap. (De pago)
+* **Pinegrow Web Editor:**  https://pinegrow.com/ - Editor visual que soporta Bootstrap y otros frameworks. (De pago)
+* **LayoutIt!:** https://layoutit.com/build  -  Constructor visual de grids de Bootstrap (Gratuito).
+
+### Video configuración de Bootstrap
+
+<VimeoEmbed 
+  videoId="1024984035"
+  title="Configuración de Bootstrap"
+/>
+
+
+
+## **Tailwind CSS**
+
+### Introducción a Tailwind CSS
+
+### ¿Qué es Tailwind CSS?
+
+Tailwind CSS es un framework de CSS "utility-first" que permite construir interfaces personalizadas rápidamente usando clases de utilidad predefinidas. En lugar de escribir CSS tradicional, utilizas clases directamente en tu HTML.
+
+### Conceptos Fundamentales
+
+#### 1. Utility-First
+En lugar de escribir CSS así:
+```css
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  background-color: #3b82f6;
+  color: white;
+}
+```
+
+Con Tailwind escribes directamente en el HTML:
+```html
+<button class="px-4 py-2 rounded bg-blue-500 text-white">
+  Botón
+</button>
+```
+
+#### 2. Clases Principales
+
+#### Espaciado
+- `p-{número}`: padding
+- `m-{número}`: margin
+- `px-{número}`: padding horizontal
+- `my-{número}`: margin vertical
+
+#### Tamaños
+- `w-{número}`: width
+- `h-{número}`: height
+- `max-w-{tamaño}`: max-width
+- `min-h-{tamaño}`: min-height
+
+#### Tipografía
+- `text-{tamaño}`: tamaño de fuente
+- `font-{peso}`: peso de fuente
+- `text-{color}`: color de texto
+- `text-center`: alineación
+
+#### Colores
+- `bg-{color}`: color de fondo
+- `text-{color}`: color de texto
+- `border-{color}`: color de borde
+
+#### Flexbox
+- `flex`: display: flex
+- `items-center`: align-items: center
+- `justify-between`: justify-content: space-between
+
+#### Grid
+- `grid`: display: grid
+- `grid-cols-{número}`: número de columnas
+- `gap-{número}`: espacio entre elementos
+
+#### 3. Sistema Responsive
+
+Tailwind usa prefijos para diferentes breakpoints:
+- `sm:` (640px)
+- `md:` (768px)
+- `lg:` (1024px)
+- `xl:` (1280px)
+- `2xl:` (1536px)
+
+Ejemplo:
+```html
+<div class="w-full md:w-1/2 lg:w-1/3">
+  <!-- Este div será full width en móvil, 50% en tablets y 33% en desktop -->
+</div>
+```
+
+#### 4. Estados
+
+Tailwind permite modificar estilos basados en estados usando prefijos:
+- `hover:`: al pasar el mouse
+- `focus:`: al tener foco
+- `active:`: al hacer clic
+- `disabled:`: cuando está deshabilitado
+
+Ejemplo:
+```html
+<button class="bg-blue-500 hover:bg-blue-700 disabled:bg-gray-400">
+  Botón
+</button>
+```
+
+### Ejemplo Práctico
+
+Aquí hay un ejemplo de una tarjeta usando Tailwind CSS:
+
+```html
+<div class="max-w-sm rounded overflow-hidden shadow-lg">
+  <div class="px-6 py-4">
+    <div class="font-bold text-xl mb-2">Título de la Tarjeta</div>
+    <p class="text-gray-700 text-base">
+      Contenido de la tarjeta con texto descriptivo que puede ocupar varias líneas.
+    </p>
+  </div>
+  <div class="px-6 pt-4 pb-2">
+    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+      #etiqueta1
+    </span>
+    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
+      #etiqueta2
+    </span>
+  </div>
+</div>
+```
+
+### Ventajas Principales
+
+1. **Desarrollo Rápido**: No necesitas escribir CSS personalizado para la mayoría de los casos.
+2. **Consistencia**: Las utilidades predefinidas mantienen un sistema de diseño coherente.
+3. **Responsive**: Sistema integrado para diseño responsive.
+4. **Personalizable**: Fácil de configurar y extender según necesidades.
+5. **Optimización**: Solo incluye las clases que utilizas en producción.
+
+### Configuración y Ejecución de Tailwind CSS
+
+#### Prerequisitos para Tailwind CSS
+
+#### Node.js y npm
+
+#### Requerimientos Mínimos
+- Node.js versión 14.0.0 o superior
+- npm versión 6.14.0 o superior
+
+#### Cómo Verificar las Versiones
+```bash
+# Verificar versión de Node.js
+node --version
+
+# Verificar versión de npm
+npm --version
+```
+
+#### Instalación de Node.js 
+   - Descarga el instalador desde [nodejs.org](https://nodejs.org)
+   - Ejecuta el instalador .msi
+   - Sigue las instrucciones del asistente
+
+
+#### 1. Inicializar un Proyecto
+
+Primero, crea un nuevo directorio para tu proyecto e inicializa npm:
+
+```bash
+mkdir mi-proyecto-tailwind
+cd mi-proyecto-tailwind
+npm init -y
+```
+
+#### 2. Instalar Dependencias
+
+Instala Tailwind CSS y sus dependencias:
+
+```bash
+npm install -D tailwindcss postcss autoprefixer
+```
+
+#### 3. Inicializar Tailwind
+
+Genera los archivos de configuración:
+
+```bash
+npx tailwindcss init -p
+```
+
+Esto creará dos archivos:
+- `tailwind.config.js`: Configuración de Tailwind
+- `postcss.config.js`: Configuración de PostCSS
+
+#### 4. Configurar Archivos
+
+#### tailwind.config.js
+```javascript
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{html,js,jsx,tsx}",
+    "./public/**/*.html",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+#### src/input.css
+Crea este archivo con las directivas básicas de Tailwind:
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+#### src/index.html
+Crea un archivo HTML básico:
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Proyecto Tailwind</title>
+    <link href="./output.css" rel="stylesheet">
+</head>
+<body>
+    <h1 class="text-3xl font-bold text-center mt-8 text-blue-600">
+        ¡Hola Tailwind!
+    </h1>
+</body>
+</html>
+```
+
+#### 5. Configurar Scripts
+
+Añade estos scripts en tu `package.json`:
+
+```json
+{
+  "scripts": {
+    "dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css --minify"
+  }
+}
+```
+
+#### 6. Ejecutar Tailwind
+
+#### Modo Desarrollo
+Para desarrollo con recarga automática:
+```bash
+npm run dev
+```
+
+#### Modo Producción
+Para construir la versión optimizada:
+```bash
+npm run build
+```
+
+#### 7. Estructura de Archivos Final
+
+Tu proyecto debería tener esta estructura:
+```
+mi-proyecto-tailwind/
+├── node_modules/
+├── src/
+│   ├── input.css
+│   └── index.html
+├── dist/
+│   └── output.css
+├── package.json
+├── package-lock.json
+├── postcss.config.js
+└── tailwind.config.js
+```
+
+### Ejemplos con Tailwind
+
+
+#### 3. Landing Page con Tailwind CSS
+
+<CodePenEmbed 
+  slugHash="zYgjzmp"
+  user="jhon-valencia-the-encoder"
+  title="Landing Page con Tailwind CSS"
+  height={300}
+/>
+
+#### 3. Dashboard con Tailwind CSS
+
+<CodePenEmbed 
+  slugHash="PoMejXo"
+  user="jhon-valencia-the-encoder"
+  title="Dashboard con Tailwind CSS"
+  height={300}
+/>
+
+#### 3. Componentes con Tailwind CSS
+
+<CodePenEmbed 
+  slugHash="eYqrRxG"
+  user="jhon-valencia-the-encoder"
+  title="Componentes con Tailwind CSS"
+  height={300}
+/>
+
+### Recursos para Componentes de Tailwind CSS
+
+Aquí tienes una lista completa de recursos para encontrar y utilizar componentes de Tailwind CSS en tus proyectos, divididos en opciones gratuitas y de pago, e incluyendo herramientas:
+
+
+**Opciones Gratuitas:**
+
+* **Tailblocks:**  https://tailblocks.cc/ - Bloques y componentes pre-diseñados.
+* **Tailwind Components:** https://tailwindcomponents.com/ -  Una extensa colección de componentes creados por la comunidad.
+* **Wicked Blocks:** https://wickedblocks.com/ - Ofrece bloques y componentes, con opciones gratuitas y de pago (filtra por "free").
+* **Mamba UI:** https://mambaui.com/ - Componentes con un estilo minimalista y moderno.
+* **Kutty:** https://kutty.netlify.app/ -  Componentes y plantillas.
+* **HyperUI:** https://hyperui.dev/ -  Colección de componentes e interfaces.
+
+
+**Opciones de Pago:**
+
+* **Tailwind UI:** https://tailwindui.com/ -  Componentes y plantillas de alta calidad, creados por los autores de Tailwind CSS.
+* **Meraki UI:** https://merakiui.com/ - Componentes con un diseño moderno y atractivo.
+* **Flowbite:** https://flowbite.com/ -  Componentes y bloques; ofrece algunas opciones gratuitas, pero la mayoría son de pago.
+* **Kometa UI:** https://kitwind.io/products/kometa/ -  Kit de componentes y plantillas.
+* **Tailwind Prime:** https://tailwindprime.com/ - Sistema de diseño con componentes y plantillas.
+* **Refine:** https://refine.dev/ - Framework para desarrollo de aplicaciones web con componentes Tailwind; versión gratuita limitada.
+* **DaisyUI:** https://daisyui.com/ - Componentes y sistema de temas para Tailwind CSS.
+
+
+**Herramientas:**
+
+* **Tailwind CSS IntelliSense (Extensión para VS Code):**  Proporciona autocompletado, sugerencias y ayuda para trabajar con clases de Tailwind CSS.
+* **Headwind (Extensión para VS Code):** Formatea y ordena tus clases de Tailwind CSS para una mejor legibilidad.
+* **Tailwind Play:** https://play.tailwindcss.com/ -  Entorno online para experimentar con Tailwind CSS. (No es un constructor visual de componentes, pero permite probar y ajustar estilos rápidamente)
+* **Pinegrow Web Editor:** https://pinegrow.com/ - Editor visual que soporta Tailwind CSS (De pago).
+* **Windframe:** https://www.windframe.dev/  -  Herramienta visual para la construcción de interfaces con Tailwind (en desarrollo activo, con planes gratuitos y de pago).
+
+
+### Video configuración de Tailwind CSS
+
+<VimeoEmbed 
+  videoId="1024984819"
+  title="Configuración de Tailwind CSS"
+/>
+
+## Actividades
+
+### 1. Actividad Práctica: Creando una Página Responsiva con Bootstrap y HTML Semántico 
+
+#### Objetivo
+Crear una página web responsiva utilizando Bootstrap 5 y etiquetas semánticas HTML5, aprendiendo sobre el sistema de grid, componentes y utilidades.
+
+
+#### Pasos
+
+#### Paso 1: Configuración Inicial
+1. Crea una nueva carpeta llamada `mi-proyecto-bootstrap`
+2. Dentro de ella, crea un archivo `index.html`
+3. Copia este código base semántico:
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Proyecto Bootstrap</title>
+    <!-- CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <!-- El contenido irá aquí -->
+
+    <!-- JavaScript de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+```
+
+#### Paso 2: Crear el Header con Navegación
+1. Dentro del `<body>`, añade un header semántico con navegación:
+```html
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="#">Mi Sitio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#servicios">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+```
+
+#### Paso 3: Crear la Sección Hero
+1. Después del header, añade una sección hero:
+```html
+<section class="hero bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx-auto text-center">
+                <h1 class="display-4">Bienvenido a Mi Sitio</h1>
+                <p class="lead">
+                    Aprende Bootstrap 5 creando este proyecto paso a paso
+                </p>
+                <button class="btn btn-primary btn-lg" aria-label="Comenzar">Comenzar</button>
+            </div>
+        </div>
+    </div>
+</section>
+```
+
+#### Paso 4: Crear la Sección de Servicios
+1. Añade una sección de servicios con tarjetas:
+```html
+<section id="servicios" class="container my-5">
+    <h2 class="text-center mb-4">Nuestros Servicios</h2>
+    <div class="row">
+        <article class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="card-title h5">Servicio 1</h3>
+                    <p class="card-text">Descripción del primer servicio que ofrecemos.</p>
+                    <a href="#" class="btn btn-outline-primary" aria-label="Más información sobre Servicio 1">Más info</a>
+                </div>
+            </div>
+        </article>
+        <article class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="card-title h5">Servicio 2</h3>
+                    <p class="card-text">Descripción del segundo servicio que ofrecemos.</p>
+                    <a href="#" class="btn btn-outline-primary" aria-label="Más información sobre Servicio 2">Más info</a>
+                </div>
+            </div>
+        </article>
+        <article class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h3 class="card-title h5">Servicio 3</h3>
+                    <p class="card-text">Descripción del tercer servicio que ofrecemos.</p>
+                    <a href="#" class="btn btn-outline-primary" aria-label="Más información sobre Servicio 3">Más info</a>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+```
+
+#### Paso 5: Crear la Sección de Contacto
+1. Añade una sección de contacto con formulario:
+```html
+<section id="contacto" class="container my-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <h2 class="text-center mb-4">Contacto</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" required aria-required="true">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" required aria-required="true">
+                </div>
+                <div class="mb-3">
+                    <label for="mensaje" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="mensaje" rows="3" required aria-required="true"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Enviar</button>
+            </form>
+        </div>
+    </div>
+</section>
+```
+
+#### Paso 6: Crear el Footer
+1. Finalmente, añade un footer semántico:
+```html
+<footer class="bg-dark text-white py-4 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="h5">Mi Sitio</h2>
+                <p>Un proyecto creado con Bootstrap 5</p>
+            </div>
+            <nav class="col-md-6 text-md-end">
+                <h2 class="h5">Síguenos</h2>
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a href="#" class="text-white" aria-label="Visita nuestro Facebook">Facebook</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="text-white" aria-label="Visita nuestro Twitter">Twitter</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="text-white" aria-label="Visita nuestro Instagram">Instagram</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</footer>
+```
+
+#### Semánticas Implementadas
+- Uso de `<header>` para la sección superior
+- Uso de `<section>` para diferentes secciones de contenido
+- Uso de `<article>` para contenido independiente (tarjetas de servicios)
+- Atributos ARIA para mejorar la accesibilidad
+- Estructura jerárquica correcta de encabezados (h1, h2, h3)
+- Uso de `<nav>` para elementos de navegación
+- Etiquetas semánticas para mejorar SEO y accesibilidad
+
+### 2. Actividad Práctica: Creando una Página Responsiva con Tailwind CSS
+
+#### Objetivo
+Crear una página web moderna y responsiva utilizando Tailwind CSS y HTML semántico, aprendiendo sobre utilidades, componentes y responsive design.
+
+#### Pasos
+
+#### Paso 1: Configuración Inicial
+1. Crea una nueva carpeta llamada `mi-proyecto-tailwind`
+2. Dentro de ella, crea un archivo `index.html`
+3. Copia este código base:
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Proyecto Tailwind</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- El contenido irá aquí -->
+</body>
+</html>
+```
+
+#### Paso 2: Crear el Header con Navegación
+```html
+<header class="bg-indigo-600">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="#" class="text-white font-bold text-xl">Mi Sitio</a>
+            </div>
+            
+            <!-- Menú Hamburguesa (móvil) -->
+            <div class="md:hidden">
+                <button type="button" class="text-gray-200 hover:text-white focus:outline-none focus:text-white">
+                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Menú Desktop -->
+            <div class="hidden md:block">
+                <div class="ml-10 flex items-baseline space-x-4">
+                    <a href="#" class="text-white px-3 py-2 rounded-md font-medium">Inicio</a>
+                    <a href="#servicios" class="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium">Servicios</a>
+                    <a href="#contacto" class="text-gray-300 hover:text-white px-3 py-2 rounded-md font-medium">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+```
+
+#### Paso 3: Crear la Sección Hero
+```html
+<section class="bg-gray-50">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+            <span class="block">Bienvenido a Mi Sitio</span>
+            <span class="block text-indigo-600">Construido con Tailwind CSS</span>
+        </h1>
+        <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+            Aprende Tailwind CSS creando este proyecto paso a paso.
+        </p>
+        <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+            <div class="rounded-md shadow">
+                <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10">
+                    Comenzar
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+```
+
+#### Paso 4: Crear la Sección de Servicios
+```html
+<section id="servicios" class="bg-white">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-8">
+            Nuestros Servicios
+        </h2>
+        
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Tarjeta 1 -->
+            <article class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <h3 class="text-lg font-medium text-gray-900">Servicio 1</h3>
+                    <p class="mt-2 text-base text-gray-500">
+                        Descripción detallada del primer servicio que ofrecemos.
+                    </p>
+                    <div class="mt-4">
+                        <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200">
+                            Más información
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Tarjeta 2 -->
+            <article class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <h3 class="text-lg font-medium text-gray-900">Servicio 2</h3>
+                    <p class="mt-2 text-base text-gray-500">
+                        Descripción detallada del segundo servicio que ofrecemos.
+                    </p>
+                    <div class="mt-4">
+                        <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200">
+                            Más información
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Tarjeta 3 -->
+            <article class="bg-white overflow-hidden shadow rounded-lg">
+                <div class="px-4 py-5 sm:p-6">
+                    <h3 class="text-lg font-medium text-gray-900">Servicio 3</h3>
+                    <p class="mt-2 text-base text-gray-500">
+                        Descripción detallada del tercer servicio que ofrecemos.
+                    </p>
+                    <div class="mt-4">
+                        <a href="#" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200">
+                            Más información
+                        </a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+```
+
+#### Paso 5: Crear la Sección de Contacto
+```html
+<section id="contacto" class="bg-gray-50">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md mx-auto">
+            <h2 class="text-3xl font-extrabold text-gray-900 text-center mb-8">
+                Contacto
+            </h2>
+            <form class="grid grid-cols-1 gap-6">
+                <div>
+                    <label for="nombre" class="block text-sm font-medium text-gray-700">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" required
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                </div>
+                
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" name="email" id="email" required
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
+                </div>
+                
+                <div>
+                    <label for="mensaje" class="block text-sm font-medium text-gray-700">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required
+                        class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"></textarea>
+                </div>
+                
+                <button type="submit"
+                    class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    Enviar mensaje
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+```
+
+#### Paso 6: Crear el Footer
+```html
+<footer class="bg-gray-800">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <h2 class="text-white text-lg font-semibold">Mi Sitio</h2>
+                <p class="mt-2 text-gray-300">
+                    Un proyecto creado con Tailwind CSS
+                </p>
+            </div>
+            <nav class="md:text-right">
+                <h2 class="text-white text-lg font-semibold">Síguenos</h2>
+                <ul class="mt-4 space-y-2">
+                    <li>
+                        <a href="#" class="text-gray-300 hover:text-white">Facebook</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-300 hover:text-white">Twitter</a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-300 hover:text-white">Instagram</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</footer>
+```
+
+#### Características Principales de Tailwind CSS Utilizadas
+1. Sistema de espaciado (`p-`, `m-`, `gap-`)
+2. Flexbox y Grid (`flex`, `grid`)
+3. Responsive Design (`sm:`, `md:`, `lg:`)
+4. Colores y Fondos
+5. Tipografía y Textos
+6. Bordes y Sombras
+7. Estados (hover, focus)
+8. Contenedores y Máximos anchos
+
