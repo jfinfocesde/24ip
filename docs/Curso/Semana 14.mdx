@@ -1,5 +1,563 @@
 ---
 sidebar_position: 14
-draft: true
+draft: false
 slug: /semana14
 ---
+
+# Semana 14
+
+## Guía Paso a Paso: Barra de Navegación con Tailwind CSS
+
+### 1. Configuración Inicial
+
+#### 1.1 Estructura HTML Base
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- Aquí irá nuestra navbar -->
+</body>
+</html>
+```
+
+### 2. Estructura Principal de la Navbar
+
+#### 2.1 Contenedor Principal
+```html
+<nav class="bg-white border-gray-200 shadow-md">
+```
+#### Clases Utilizadas:
+- `bg-white`: Establece el fondo blanco
+- `border-gray-200`: Color del borde
+- `shadow-md`: Añade sombra media para profundidad
+
+#### 2.2 Contenedor Interior
+```html
+<div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+```
+#### Clases Utilizadas:
+- `max-w-screen-xl`: Ancho máximo para pantallas grandes
+- `flex flex-wrap`: Layout flexible con wrap
+- `items-center`: Alinea elementos verticalmente
+- `justify-between`: Espacia elementos uniformemente
+- `mx-auto`: Centra horizontalmente
+- `p-4`: Padding en todos los lados
+
+### 3. Sección del Logo
+
+#### 3.1 Estructura del Logo
+```html
+<a href="#" class="flex items-center">
+    <img src="logo.png" class="h-10 mr-3" alt="Logo" />
+    <span class="self-center text-2xl font-semibold whitespace-nowrap">
+        Mi Empresa
+    </span>
+</a>
+```
+#### Clases Utilizadas:
+- `flex items-center`: Alinea logo y texto
+- `h-10`: Altura del logo
+- `mr-3`: Margen derecho
+- `self-center`: Auto-alineación central
+- `text-2xl`: Tamaño de texto grande
+- `font-semibold`: Peso de fuente semi-negrita
+- `whitespace-nowrap`: Previene saltos de línea
+
+### 4. Botón de Menú Móvil
+
+#### 4.1 Estructura del Botón
+```html
+<button type="button" 
+    class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
+    <span class="sr-only">Abrir menú principal</span>
+    <!-- Ícono SVG aquí -->
+</button>
+```
+#### Clases Utilizadas:
+- `inline-flex`: Display inline con flexbox
+- `items-center justify-center`: Centra el contenido
+- `w-10 h-10`: Dimensiones cuadradas
+- `md:hidden`: Oculto en escritorio
+- `hover:bg-gray-100`: Color de fondo al hover
+- `focus:ring-2`: Anillo de focus
+
+### 5. Menú de Navegación
+
+#### 5.1 Contenedor del Menú
+```html
+<div class="hidden w-full md:block md:w-auto" id="navbar-menu">
+```
+#### Clases Utilizadas:
+- `hidden`: Oculto por defecto
+- `w-full`: Ancho completo en móvil
+- `md:block`: Visible en desktop
+- `md:w-auto`: Ancho automático en desktop
+
+#### 5.2 Lista de Enlaces
+```html
+<ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white">
+```
+#### Clases Utilizadas:
+- `flex flex-col`: Dirección vertical en móvil
+- `md:flex-row`: Dirección horizontal en desktop
+- `md:space-x-8`: Espacio entre elementos en desktop
+- `rounded-lg`: Bordes redondeados
+- `bg-gray-50`: Color de fondo en móvil
+
+#### 5.3 Elementos de la Lista
+```html
+<li>
+    <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">
+        Inicio
+    </a>
+</li>
+```
+#### Clases Utilizadas:
+- `block`: Display block para el enlace
+- `py-2 pl-3 pr-4`: Padding
+- `hover:bg-gray-100`: Fondo al hover en móvil
+- `md:hover:bg-transparent`: Sin fondo al hover en desktop
+- `md:hover:text-blue-700`: Color al hover en desktop
+
+### 6. JavaScript para Interactividad
+
+#### 6.1 Toggle del Menú Móvil
+```javascript
+document.querySelector('button').addEventListener('click', () => {
+    document.getElementById('navbar-menu').classList.toggle('hidden');
+});
+```
+
+### 7. Responsividad
+
+#### 7.1 Breakpoints Principales
+- `md:`: ≥768px (Tablet/Desktop)
+- Móvil: `<768px (diseño por defecto)`
+
+#### 7.2 Cambios Responsivos Clave
+- Menú: vertical en móvil, horizontal en desktop
+- Botón de menú: visible en móvil, oculto en desktop
+- Ancho del menú: completo en móvil, auto en desktop
+- Estilos de hover: diferentes para móvil y desktop
+
+### 8. Mejores Prácticas
+
+1. **Accesibilidad**
+   - Usar `sr-only` para lectores de pantalla
+   - Mantener contraste adecuado
+   - Incluir atributos ARIA cuando sea necesario
+
+2. **Performance**
+   - Utilizar clases de Tailwind en lugar de CSS personalizado
+   - Evitar anidamiento innecesario
+   - Mantener el HTML limpio y semántico
+
+3. **Mantenibilidad**
+   - Organizar componentes lógicamente
+   - Comentar secciones importantes
+   - Seguir una estructura consistente
+
+### 9. Personalización
+
+Para personalizar colores y estilos:
+
+1. **Colores de Marca**
+   ```html
+   <!-- Ejemplo para color primario -->
+   <a class="text-[#tuColor] hover:text-[#tuColorHover]">
+   ```
+
+2. **Espaciado**
+   ```html
+   <!-- Ajustar espaciado entre elementos -->
+   <ul class="md:space-x-[tuEspacio]">
+   ```
+
+3. **Tipografía**
+   ```html
+   <!-- Modificar fuentes -->
+   <span class="font-[tuFuente] text-[tuTamaño]">
+   ```
+
+## Guía: Creación de Tarjeta de Producto (Product Card) con Tailwind CSS
+
+### 1. Estructura Base
+
+#### 1.1 Configuración Inicial
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <!-- Aquí irá nuestro componente -->
+</body>
+</html>
+```
+
+### 2. Contenedor Principal
+
+#### 2.1 Estructura del Card
+```html
+<div class="max-w-sm bg-white rounded-lg shadow-md dark:bg-gray-800">
+```
+#### Clases Utilizadas:
+- `max-w-sm`: Ancho máximo pequeño
+- `bg-white`: Fondo blanco
+- `rounded-lg`: Bordes redondeados
+- `shadow-md`: Sombra media
+- `dark:bg-gray-800`: Color de fondo en modo oscuro
+
+### 3. Sección de Imagen
+
+#### 3.1 Contenedor de Imagen
+```html
+<a href="#" class="relative group">
+    <img class="rounded-t-lg w-full h-64 object-cover" src="producto.jpg" alt="Producto" />
+    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-opacity duration-300"></div>
+</a>
+```
+#### Clases Utilizadas:
+- `relative`: Posicionamiento relativo
+- `group`: Para efectos hover
+- `rounded-t-lg`: Bordes redondeados superiores
+- `object-cover`: Ajuste de imagen
+- `absolute inset-0`: Overlay posicionado
+- `transition-opacity`: Transición suave
+
+### 4. Contenido del Producto
+
+#### 4.1 Información Principal
+```html
+<div class="p-5">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+        Nombre del Producto
+    </h5>
+```
+#### Clases Utilizadas:
+- `p-5`: Padding uniforme
+- `text-2xl`: Tamaño de texto
+- `font-bold`: Peso de fuente
+- `tracking-tight`: Espaciado de letras
+- `dark:text-white`: Color en modo oscuro
+
+#### 4.2 Descripción
+```html
+<p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+    Descripción breve del producto que destaca sus características principales.
+</p>
+```
+
+#### 4.3 Precio y Etiquetas
+```html
+<div class="flex justify-between items-center mb-4">
+    <span class="text-3xl font-bold text-gray-900 dark:text-white">$299</span>
+    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800">
+        NUEVO
+    </span>
+</div>
+```
+
+### 5. Sección de Acciones
+
+#### 5.1 Botones
+```html
+<div class="flex items-center justify-between">
+    <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+        Añadir al carrito
+    </button>
+    
+    <button class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800">
+        Detalles
+    </button>
+</div>
+```
+
+### 6. Características Interactivas
+
+#### 6.1 Hover Effects
+```html
+<!-- Efecto hover en la imagen -->
+<div class="overflow-hidden">
+    <img class="transform transition-transform duration-300 hover:scale-105" />
+</div>
+```
+#### Clases Utilizadas:
+- `overflow-hidden`: Contiene la transformación
+- `transform`: Habilita transformaciones
+- `transition-transform`: Suaviza la transformación
+- `hover:scale-105`: Escala en hover
+
+#### 6.2 Botones Interactivos
+```html
+<!-- Estados del botón -->
+<button class="
+    text-white 
+    bg-blue-700 
+    hover:bg-blue-800 
+    focus:ring-4 
+    focus:ring-blue-300 
+    active:bg-blue-900
+    disabled:opacity-50
+">
+```
+
+### 7. Responsividad
+
+#### 7.1 Grid Layout
+```html
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <!-- Cards aquí -->
+</div>
+```
+
+#### 7.2 Ajustes Responsivos
+- `sm:`: ≥640px
+- `md:`: ≥768px
+- `lg:`: ≥1024px
+- `xl:`: ≥1280px
+
+## Guía Paso a Paso: Footer Moderno con Tailwind CSS
+
+### 1. Estructura Base
+
+#### 1.1 Contenedor Principal
+```html
+<footer class="bg-white dark:bg-gray-900">
+    <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <!-- Contenido del footer -->
+    </div>
+</footer>
+```
+#### Clases Explicadas:
+- `bg-white`: Fondo blanco en modo claro
+- `dark:bg-gray-900`: Fondo oscuro en modo dark
+- `mx-auto`: Centrado horizontal
+- `max-w-screen-xl`: Ancho máximo contenido
+- `py-6`: Padding vertical en móvil
+- `lg:py-8`: Padding vertical en desktop
+
+### 2. Grid Principal
+
+#### 2.1 Estructura de Columnas
+```html
+<div class="md:flex md:justify-between">
+    <!-- Columna Logo/Empresa -->
+    <div class="mb-6 md:mb-0">
+        <!-- Contenido -->
+    </div>
+    
+    <!-- Columnas de Enlaces -->
+    <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+        <!-- Contenido -->
+    </div>
+</div>
+```
+#### Clases Clave:
+- `md:flex`: Flex en tablets y desktop
+- `grid-cols-2`: 2 columnas en móvil
+- `sm:grid-cols-3`: 3 columnas en desktop
+- `gap-8`: Espacio entre columnas
+
+### 3. Sección Logo y Descripción
+
+#### 3.1 Logo y Nombre Empresa
+```html
+<a href="#" class="flex items-center">
+    <img src="logo.svg" class="h-8 mr-3" alt="Logo" />
+    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+        Empresa
+    </span>
+</a>
+```
+
+#### 3.2 Descripción Empresa
+```html
+<p class="mt-4 text-gray-600 dark:text-gray-400 max-w-xs">
+    Breve descripción de la empresa o eslogan corporativo.
+</p>
+```
+
+### 4. Columnas de Enlaces
+
+#### 4.1 Estructura de Columna
+```html
+<div>
+    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+        Recursos
+    </h2>
+    <ul class="text-gray-600 dark:text-gray-400">
+        <li class="mb-4">
+            <a href="#" class="hover:underline">Enlace 1</a>
+        </li>
+        <!-- Más enlaces -->
+    </ul>
+</div>
+```
+
+### 5. Sección Social y Copyright
+
+#### 5.1 Divisor
+```html
+<hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+```
+
+#### 5.2 Contenedor Inferior
+```html
+<div class="sm:flex sm:items-center sm:justify-between">
+    <!-- Copyright -->
+    <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+        © 2024 <a href="#" class="hover:underline">Empresa™</a>. 
+        Todos los derechos reservados.
+    </span>
+    
+    <!-- Enlaces Sociales -->
+    <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+        <!-- Iconos sociales -->
+    </div>
+</div>
+```
+
+### 6. Iconos Sociales
+
+#### 6.1 Estructura de Iconos
+```html
+<a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+        <!-- Path del ícono -->
+    </svg>
+    <span class="sr-only">Página de Facebook</span>
+</a>
+```
+
+### 7. Responsive Design
+
+#### 7.1 Breakpoints Principales
+```css
+/* Móvil (default) */
+.grid-cols-2
+
+/* Tablet (md) */
+.md:flex
+.md:justify-between
+
+/* Desktop (lg) */
+.lg:py-8
+```
+
+## Guía Paso a Paso: Formulario de Contacto con Tailwind CSS
+
+### 1. Estructura Base
+
+#### 1.1 Contenedor Principal
+```html
+<section class="bg-white dark:bg-gray-900">
+    <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+        <!-- Contenido del formulario -->
+    </div>
+</section>
+```
+#### Clases Explicadas:
+- `bg-white`: Fondo blanco en modo claro
+- `dark:bg-gray-900`: Fondo oscuro en modo oscuro
+- `py-8`: Padding vertical en móvil
+- `lg:py-16`: Padding vertical en desktop
+- `px-4`: Padding horizontal
+- `mx-auto`: Centrado horizontal
+- `max-w-screen-md`: Ancho máximo contenido
+
+### 2. Título y Descripción
+
+#### 2.1 Estructura
+```html
+<div class="mb-8 lg:mb-16">
+    <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">
+        Contáctanos
+    </h2>
+    <p class="mb-8 lg:mb-16 font-light text-gray-500 dark:text-gray-400 sm:text-xl">
+        Llena este formulario y nos pondremos en contacto contigo lo antes posible.
+    </p>
+</div>
+```
+#### Clases Utilizadas:
+- `mb-8`: Margen inferior móvil
+- `lg:mb-16`: Margen inferior desktop
+- `text-4xl`: Tamaño de título
+- `tracking-tight`: Espaciado de letras
+- `font-extrabold`: Peso de fuente
+- `text-gray-900`: Color de título claro
+- `dark:text-white`: Color de título oscuro
+- `font-light`: Peso de fuente ligera
+- `text-gray-500`: Color de descripción claro
+- `dark:text-gray-400`: Color de descripción oscuro
+- `sm:text-xl`: Tamaño de descripción en desktop
+
+### 3. Campos del Formulario
+
+#### 3.1 Estructura
+```html
+<form action="#" class="space-y-8">
+    <!-- Nombre -->
+    <div>
+        <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+            Nombre
+        </label>
+        <input type="text" id="name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Nombre" required>
+    </div>
+    <!-- Email -->
+    <div>
+        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+            Email
+        </label>
+        <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="nombre@ejemplo.com" required>
+    </div>
+    <!-- Mensaje -->
+    <div class="sm:col-span-2">
+        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+            Mensaje
+        </label>
+        <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Escribe tu mensaje..."></textarea>
+    </div>
+</form>
+```
+#### Clases Utilizadas:
+- `space-y-8`: Espacio vertical entre campos
+- `block mb-2`: Margen inferior etiquetas
+- `text-sm font-medium`: Tamaño y peso de fuente de etiquetas
+- `shadow-sm bg-gray-50`: Estilos de campo de entrada
+- `border border-gray-300`: Borde de campo de entrada
+- `text-gray-900 dark:text-white`: Color de texto de campo
+- `text-sm rounded-lg`: Borde redondeado de campo
+- `focus:ring-primary-500 focus:border-primary-500`: Estilos de campo en foco
+- `dark:bg-gray-700 dark:border-gray-600`: Estilos de campo en modo oscuro
+- `p-2.5`: Relleno de campo de entrada
+- `w-full`: Ancho completo de campo
+
+### 4. Botón de Envío
+
+#### 4.1 Estructura
+```html
+<button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+    Enviar mensaje
+</button>
+```
+#### Clases Utilizadas:
+- `py-3 px-5`: Padding del botón
+- `text-sm font-medium`: Tamaño y peso de fuente
+- `text-center`: Alineación de texto
+- `text-white`: Color de texto
+- `rounded-lg`: Borde redondeado
+- `bg-primary-700`: Color de fondo primario
+- `sm:w-fit`: Ancho automático en desktop
+- `hover:bg-primary-800`: Color de fondo en hover
+- `focus:ring-4 focus:ring-primary-300`: Anillo de foco
+- `dark:bg-primary-600 dark:hover:bg-primary-700`: Estilos en modo oscuro
+
