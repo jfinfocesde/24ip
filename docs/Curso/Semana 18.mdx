@@ -3,3 +3,47 @@ sidebar_position: 18
 draft: true
 slug: /semana18
 ---
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página con Favicon</title>
+  <link rel="icon" type="image/png" href="favicon.png">  <!-- Opción 1: PNG -->
+  <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> --> <!-- Opción 2: ICO (recomendado) -->
+  <!-- <link rel="icon" type="image/svg+xml" href="favicon.svg"> --> <!-- Opción 3: SVG -->
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hola, este es un ejemplo de Favicon</h1>
+  <p>Abre esta página en un navegador para ver el favicon en la pestaña.</p>
+</body>
+</html>
+```
+
+**Explicación:**
+
+1. **`<link rel="icon" ...>`:** Esta etiqueta dentro de la sección `<head>` es la que define el favicon.
+2. **`href="favicon.png"`:**  Especifica la ruta al archivo del favicon.  Asegúrate de que el archivo `favicon.png` (o `.ico` o `.svg`) esté en la misma carpeta que tu archivo HTML.  Si está en una subcarpeta, ajusta la ruta (ej. `img/favicon.png`).
+3. **`type="image/png"`:** Indica el tipo MIME del archivo.  Usa `image/png` para PNG, `image/x-icon` para ICO y `image/svg+xml` para SVG.
+4. **Formatos:**
+   * **ICO (.ico):** El formato tradicional y más compatible con todos los navegadores. Se recomienda usar este formato.  Puedes crear archivos ICO con herramientas online gratuitas como [convertico.com](https://convertio.co/es/png-ico/).
+   * **PNG (.png):**  Un formato ampliamente soportado y fácil de crear.
+   * **SVG (.svg):**  Escalable y se ve bien en cualquier tamaño.  No todos los navegadores lo soportan de la misma manera.
+
+**Pasos para implementarlo:**
+
+1. **Crea tu imagen de favicon:** Diseña una imagen pequeña y cuadrada (idealmente 16x16, 32x32 o multiples como 64x64).
+2. **Conviértela a ICO (recomendado):**  Usa un conversor online para convertir tu imagen a formato ICO.  Si prefieres usar PNG o SVG, puedes saltarte este paso.
+3. **Guarda el archivo:** Guarda el archivo ICO (o PNG o SVG) como `favicon.ico` (o `favicon.png` o `favicon.svg`) en la misma carpeta que tu archivo HTML.
+4. **Añade la etiqueta `<link>`:** Copia el código HTML proporcionado y pégalo en la sección `<head>` de tu archivo HTML. Asegúrate de ajustar la ruta y el tipo MIME si es necesario.
+5. **Abre el HTML en un navegador:** Abre tu archivo HTML en un navegador web. Deberías ver el favicon en la pestaña del navegador.  Puede que necesites refrescar la caché del navegador (Ctrl+Shift+R o Cmd+Shift+R) si no lo ves de inmediato.
+
+
+Recuerda que el formato ICO es el más recomendado por su compatibilidad.  Si usas PNG o SVG, algunos navegadores antiguos podrían no mostrar el favicon correctamente.

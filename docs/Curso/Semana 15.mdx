@@ -1,5 +1,344 @@
 ---
 sidebar_position: 15
-draft: true
+draft: false
 slug: /semana15
 ---
+import CodePenEmbed from '@site/src/components/CodePenEmbed';
+
+# Semana 15
+
+## BEM (Block, Element, Modifier) 
+
+Es una metodología de nomenclatura para clases CSS que ayuda a crear código más mantenible y escalable. Esta metodología se basa en tres conceptos principales: Bloque (Block), Elemento (Element) y Modificador (Modifier). A continuación, te explico cada uno de estos conceptos:
+
+### 1. Bloque (Block)
+Un bloque es un componente independiente y reutilizable que no depende de otros bloques. Puede ser un contenedor de contenido, un botón, una lista, etc. Los bloques son la unidad básica en BEM.
+
+Ejemplo:
+
+```html
+<div class="card"></div>
+```
+
+### 2. Elemento (Element)
+Un elemento es una parte de un bloque que no puede existir fuera de él. Los elementos están siempre dentro de un bloque y son utilizados para estructurar el contenido del bloque.
+
+Ejemplo:
+
+
+```html
+<div class="card">
+  <img class="card__image" src="image.jpg" alt="Imagen del card">
+  <h2 class="card__title">Título del card</h2>
+  <p class="card__description">Descripción del card</p>
+</div>
+```
+
+### 3. Modificador (Modifier)
+Un modificador es una variación de un bloque o un elemento. Se utiliza para cambiar el estilo o el comportamiento de un bloque o un elemento sin tener que crear nuevas clases. Los modificadores se representan con un doble guion (--).
+
+Ejemplo:
+
+```html
+<div class="card card--large">
+  <img class="card__image card__image--rounded" src="image.jpg" alt="Imagen del card">
+  <h2 class="card__title">Título del card</h2>
+  <p class="card__description">Descripción del card</p>
+</div>
+```
+
+### Reglas de Nomenclatura
+* Bloque: nombre-del-bloque
+* Elemento: nombre-del-bloque__nombre-del-elemento
+* Modificador: nombre-del-bloque--nombre-del-modificador o nombre-del-elemento--nombre-del-modificador
+
+### Ventajas de BEM
+* Claridad: La nomenclatura BEM hace que sea fácil entender la relación entre los elementos y los bloques.
+* Reutilización: Los bloques son componentes reutilizables, lo que facilita la creación de interfaces consistentes.
+* Mantenibilidad: El código es más fácil de mantener y escalar, ya que los cambios en un bloque no afectan a otros bloques.
+* Colaboración: Facilita la colaboración en equipos grandes, ya que todos siguen las mismas reglas de nomenclatura.
+
+
+### Ejemplo 1
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo BEM</title>
+  <style>
+    .card {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px;
+    }
+    .card__image {
+      width: 100%;
+    }
+    .card__title {
+      font-size: 1.5em;
+      margin: 10px 0;
+    }
+    .card__description {
+      font-size: 1em;
+    }
+    .card--large {
+      padding: 20px;
+    }
+    .card__image--rounded {
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card card--large">
+    <img class="card__image card__image--rounded" src="image.jpg" alt="Imagen del card">
+    <h2 class="card__title">Título del card</h2>
+    <p class="card__description">Descripción del card</p>
+  </div>
+</body>
+</html>
+```
+
+En este ejemplo, se muestra cómo se aplican los conceptos de BEM para crear un componente de tarjeta con diferentes estilos y modificadores.
+
+### Ejemplo 2
+<CodePenEmbed 
+  slugHash="XWvGbvg"
+  user="jhon-valencia-the-encoder"
+  title="BEM CSS"
+  height={300}
+/>
+
+## Actividades:
+
+### 1. Creando una Tarjeta de Perfil de Usuario (Enfoque en BEM)
+
+Esta actividad se centra en el aprendizaje de BEM mediante la creación de una tarjeta de perfil de usuario.  Presta mucha atención a la nomenclatura y la estructura.
+
+**Paso 1: Definir el Bloque y su Propósito**
+
+Nuestro bloque será `user-card`.  Su propósito es mostrar información clave de un usuario, como su foto, nombre y una breve descripción.
+
+**Paso 2: Estructura HTML (Bloque y Elementos)**
+
+```html
+<div class="user-card">
+  <img src="avatar.jpg" alt="Foto de perfil" class="user-card__avatar">
+  <div class="user-card__info">
+    <h3 class="user-card__name">Nombre de Usuario</h3>
+    <p class="user-card__bio">Breve descripción del usuario.</p>
+  </div>
+</div>
+```
+
+* **Bloque:** `.user-card` - Contenedor principal.
+* **Elementos:**
+    * `.user-card__avatar` - Imagen de perfil.
+    * `.user-card__info` - Contenedor para la información del usuario.
+    * `.user-card__name` - Nombre del usuario.
+    * `.user-card__bio` -  Biografía corta del usuario.
+
+**Enfoque BEM:**  Observa el patrón `bloque__elemento` en los nombres de las clases. Esto establece una relación clara entre cada elemento y el bloque `user-card`.
+
+**Paso 3: Estilos CSS para el Bloque**
+
+```css
+.user-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px; /* Ejemplo de ancho */
+}
+```
+
+**Enfoque BEM:** Estilizamos primero el bloque principal para definir la apariencia general.
+
+**Paso 4: Estilos CSS para los Elementos**
+
+```css
+.user-card__avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* Imagen circular */
+  object-fit: cover; /* Ajustar la imagen al círculo */
+  float: left; /* Alinear la imagen a la izquierda */
+  margin-right: 15px;
+}
+
+.user-card__info {
+  overflow: hidden; /* Limpiar el flotador de la imagen */
+}
+
+.user-card__name {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.user-card__bio {
+  font-size: 0.9em;
+  color: #666;
+}
+
+```
+
+**Enfoque BEM:** Estilizamos cada elemento individualmente, manteniendo la conexión con el bloque a través del nombre de la clase.
+
+**Paso 5: Añadiendo un Modificador**
+
+Queremos una variación para usuarios "premium".  Añadimos un modificador:
+
+```html
+<div class="user-card user-card--premium">
+  <img src="avatar-premium.jpg" alt="Foto de perfil" class="user-card__avatar">
+  <div class="user-card__info">
+    <h3 class="user-card__name">Usuario Premium</h3>
+    <p class="user-card__bio">Descripción del usuario premium.</p>
+  </div>
+</div>
+```
+
+```css
+.user-card--premium {
+  border-color: gold;
+}
+
+.user-card--premium .user-card__name {
+  color: gold;
+}
+
+```
+
+### 2. Creando un Componente "Reproductor de Música"
+
+Esta actividad guiará la creación de un componente "reproductor de música" más complejo, aplicando la metodología BEM para una estructura CSS organizada.
+
+**Paso 1: Definir el Bloque y su Propósito**
+
+El bloque se llamará `reproductor-musica`. Su propósito es controlar la reproducción de audio, mostrando información de la canción y permitiendo acciones como reproducir/pausar, cambiar de canción y ajustar el volumen.
+
+**Paso 2: Estructura HTML**
+
+```html
+<div class="reproductor-musica">
+  <div class="reproductor-musica__caratula">
+    <img src="caratula.jpg" alt="Carátula del álbum" class="reproductor-musica__imagen">
+  </div>
+  <div class="reproductor-musica__informacion">
+    <h3 class="reproductor-musica__titulo">Título de la Canción</h3>
+    <p class="reproductor-musica__artista">Nombre del Artista</p>
+  </div>
+  <div class="reproductor-musica__controles">
+    <button class="reproductor-musica__boton reproductor-musica__boton--anterior"><i class="fas fa-backward"></i></button>
+    <button class="reproductor-musica__boton reproductor-musica__boton--reproducir"><i class="fas fa-play"></i></button>
+    <button class="reproductor-musica__boton reproductor-musica__boton--siguiente"><i class="fas fa-forward"></i></button>
+    <div class="reproductor-musica__volumen">
+      <input type="range" class="reproductor-musica__control-volumen" min="0" max="100" value="50">
+    </div>
+  </div>
+  <div class="reproductor-musica__progreso">
+    <div class="reproductor-musica__barra-progreso" style="width: 30%;"></div>
+  </div>
+</div>
+```
+
+**Bloque:** `reproductor-musica`
+**Elementos:** `reproductor-musica__caratula`, `reproductor-musica__imagen`, `reproductor-musica__informacion`, `reproductor-musica__titulo`, `reproductor-musica__artista`, `reproductor-musica__controles`, `reproductor-musica__boton`, `reproductor-musica__boton--anterior`, `reproductor-musica__boton--reproducir`, `reproductor-musica__boton--siguiente`, `reproductor-musica__volumen`, `reproductor-musica__control-volumen`, `reproductor-musica__progreso`, `reproductor-musica__barra-progreso`.
+**Modificadores:**  `reproductor-musica__boton--anterior`, `reproductor-musica__boton--reproducir`, `reproductor-musica__boton--siguiente`.
+
+**Paso 3: Estilos CSS**
+
+```css
+.reproductor-musica {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  padding: 20px;
+  width: 400px;
+  display: flex;
+  flex-direction: column; /* Apilar elementos verticalmente */
+}
+
+.reproductor-musica__caratula {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.reproductor-musica__imagen {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.reproductor-musica__informacion {
+  margin-bottom: 15px;
+}
+
+.reproductor-musica__titulo {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.reproductor-musica__artista {
+  font-size: 0.9em;
+  color: #6c757d;
+}
+
+.reproductor-musica__controles {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.reproductor-musica__boton {
+  background-color: transparent;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 1.2em;
+  color: #6c757d;
+}
+
+.reproductor-musica__volumen {
+  width: 100px;
+}
+
+.reproductor-musica__control-volumen {
+  width: 100%;
+}
+
+.reproductor-musica__progreso {
+  background-color: #e9ecef;
+  height: 5px;
+  border-radius: 5px;
+}
+
+.reproductor-musica__barra-progreso {
+  background-color: #007bff;
+  height: 100%;
+  border-radius: 5px;
+}
+```
+
+### 3. Creando un Componente de "Formulario de Contacto"
+
+En esta actividad, aplicarás la metodología BEM para crear un formulario de contacto.  El formulario deberá permitir al usuario ingresar su nombre, correo electrónico y un mensaje, y deberá tener un botón para enviar el formulario.
+
+**Requisitos:**
+
+* El componente debe tener un bloque principal que contenga todos los elementos del formulario.
+* Debe incluir los siguientes elementos:
+    * Un campo de entrada para el nombre del usuario.
+    * Un campo de entrada para el correo electrónico del usuario.
+    * Un área de texto para el mensaje del usuario.
+    * Un botón para enviar el formulario.
+* Debes utilizar la nomenclatura BEM para nombrar las clases de CSS de todos los elementos del formulario.  Por ejemplo:
+    * Bloque:  `formulario-contacto`
+    * Elementos: `formulario-contacto__nombre`, `formulario-contacto__correo`, `formulario-contacto__mensaje`, `formulario-contacto__boton`
+* Aplica estilos CSS para que el formulario tenga una apariencia visualmente atractiva.  Puedes usar los estilos que prefieras, pero asegúrate de que el formulario sea fácil de usar y que los elementos estén claramente etiquetados.
+* Crea al menos dos modificadores para el botón de enviar:
+    * `formulario-contacto__boton--enviar`:  Estilo para el botón en estado normal.
+    * `formulario-contacto__boton--enviando`: Estilo para el botón mientras se envía el formulario (por ejemplo, deshabilitado y con un indicador de carga).  *Este modificador se aplicaría con JavaScript, no es necesario implementarlo en esta actividad, solo definir los estilos CSS*.
+
+
