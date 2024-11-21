@@ -3,3 +3,118 @@ sidebar_position: 16
 draft: false
 slug: /semana16
 ---
+import CodePenEmbed from '@site/src/components/CodePenEmbed';
+
+# Semana 16
+
+# Documentación de Media Queries CSS
+
+## 1. Introducción
+
+Las media queries son una característica de CSS3 que permite aplicar estilos condicionales basados en características del dispositivo o del entorno de visualización.
+
+## 2. Sintaxis Básica
+
+### 2.1 Estructura General
+
+```css
+@media [tipo de medio] [operador lógico] (condición) {
+    /* Reglas CSS */
+}
+```
+
+### 2.2 Componentes
+
+- **Tipo de Medio**: Define el contexto de visualización
+- **Operador Lógico**: `and`, `not`, `only`
+- **Condición**: Características a evaluar
+
+## 3. Tipos de Medio
+
+| Tipo de Medio | Descripción |
+|--------------|-------------|
+| `all`        | Todos los dispositivos |
+| `screen`     | Pantallas |
+| `print`      | Documentos de impresión |
+| `speech`     | Lectores de pantalla |
+
+## 4. Condiciones Principales
+
+### 4.1 Dimensiones
+
+| Condición        | Descripción |
+|-----------------|-------------|
+| `width`         | Ancho del viewport |
+| `height`        | Altura del viewport |
+| `min-width`     | Ancho mínimo |
+| `max-width`     | Ancho máximo |
+| `aspect-ratio`  | Proporción de aspecto |
+
+### 4.2 Ejemplos de Uso
+
+```css
+/* Móviles */
+@media screen and (max-width: 600px) {
+    /* Estilos específicos */
+}
+
+/* Tablets */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    /* Estilos específicos */
+}
+```
+
+## 5. Operadores Lógicos
+
+| Operador | Función |
+|----------|---------|
+| `and`    | Combinación de condiciones |
+| `not`    | Negación de condición |
+| `only`   | Compatibilidad con navegadores antiguos |
+
+### 5.1 Ejemplos de Operadores
+
+```css
+/* Múltiples condiciones */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Estilos para tablets */
+}
+
+/* Negación */
+@media not screen and (max-width: 600px) {
+    /* Estilos para dispositivos que NO son móviles pequeños */
+}
+```
+
+## 6. Características Avanzadas
+
+### 6.1 Orientación
+
+```css
+@media screen and (orientation: portrait) {
+    /* Estilos para dispositivos en vertical */
+}
+
+@media screen and (orientation: landscape) {
+    /* Estilos para dispositivos en horizontal */
+}
+```
+
+### 6.2 Resolución
+
+```css
+@media screen and (min-resolution: 300dpi) {
+    /* Estilos para pantallas de alta resolución */
+}
+```
+
+## 8. Ejemplo Completo de Implementación
+
+
+<CodePenEmbed 
+  slugHash="rNXEpbK"
+  user="jhon-valencia-the-encoder"
+  title="CodePen Home Media Queries CSS"
+  height={300}
+/>
+
